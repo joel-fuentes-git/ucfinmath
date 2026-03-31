@@ -1,0 +1,43 @@
+# LoRA fine-tuning configuration for the Value Investor persona
+# Section III — The Proposed Framework
+#
+# Design notes:
+#   - Identical hyperparameters to momentum.yaml. We keep all three persona configs
+#     the same intentionally: the behavioral differences should emerge from the data,
+#     not from differences in training procedure. This makes the comparison cleaner.
+#   - A longer training run (more epochs) is not necessary because the value investor
+#     behavior is relatively simple and consistent — the signal-to-noise in the data is high.
+
+# Model
+base_model_name_or_path: "Qwen/Qwen2.5-1.5B-Instruct"
+persona: "value"
+
+# Data
+train_data_path: "data/personas/value.jsonl"
+
+# LoRA adapter configuration
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+target_modules:
+  - "q_proj"
+  - "v_proj"
+bias: "none"
+task_type: "CAUSAL_LM"
+
+# Training hyperparameters
+num_train_epochs: 3
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 2
+learning_rate: 0.0002
+lr_scheduler_type: "cosine"
+warmup_ratio: 0.05
+weight_decay: 0.01
+max_seq_length: 512
+
+# Output
+output_dir: "training/adapters/value"
+logging_steps: 10
+save_strategy: "epoch"
+fp16: false
+bf16: true

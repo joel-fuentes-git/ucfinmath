@@ -1,0 +1,45 @@
+# LoRA fine-tuning configuration for the Noise Trader persona
+# Section III — The Proposed Framework
+#
+# Design notes:
+#   - The noise trader data has higher variance in reasoning and action than the other
+#     two personas (by design — noise traders are erratic). We keep the same hyperparameters
+#     rather than adjusting for this variance, because the goal is to learn the *distribution*
+#     of noise trader behavior, including its randomness.
+#   - A production version might use a higher dropout rate for the noise persona to prevent
+#     the adapter from over-fitting to any particular noise pattern. We keep it at 0.05
+#     for consistency and simplicity.
+
+# Model
+base_model_name_or_path: "Qwen/Qwen2.5-1.5B-Instruct"
+persona: "noise"
+
+# Data
+train_data_path: "data/personas/noise.jsonl"
+
+# LoRA adapter configuration
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+target_modules:
+  - "q_proj"
+  - "v_proj"
+bias: "none"
+task_type: "CAUSAL_LM"
+
+# Training hyperparameters
+num_train_epochs: 3
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 2
+learning_rate: 0.0002
+lr_scheduler_type: "cosine"
+warmup_ratio: 0.05
+weight_decay: 0.01
+max_seq_length: 512
+
+# Output
+output_dir: "training/adapters/noise"
+logging_steps: 10
+save_strategy: "epoch"
+fp16: false
+bf16: true

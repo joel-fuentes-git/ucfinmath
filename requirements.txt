@@ -1,0 +1,34 @@
+# Requirements for trader-personas
+# Section III stack: fine-tuning, simulation, evaluation, and demo app
+#
+# Fine-tuning requires a GPU (A100 recommended, ~15 min per persona).
+# Simulation, evaluation, and the Streamlit app run on CPU only.
+
+# --- HuggingFace fine-tuning stack ---
+transformers>=4.40
+peft>=0.10
+trl>=0.8
+torch>=2.2
+datasets>=2.18
+accelerate>=0.29
+
+# --- Data generation ---
+anthropic>=0.25
+
+# --- Numerical / scientific ---
+numpy>=1.26
+scipy>=1.12
+matplotlib>=3.8
+
+# --- Visualization (app) ---
+plotly>=5.20
+
+# --- Demo app ---
+streamlit>=1.33
+
+# --- Notebooks ---
+jupyter>=1.0
+
+# --- Utilities ---
+pyyaml>=6.0
+tqdm>=4.66
