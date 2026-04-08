@@ -1,0 +1,7624 @@
+{
+  "name": "All Value (30)",
+  "filename": "all_value_30.json",
+  "persona_composition": {
+    "value": 30
+  },
+  "price_series": [
+    100.0,
+    100.0934,
+    100.1203,
+    100.0855,
+    100.1264,
+    100.2556,
+    100.0809,
+    100.1661,
+    100.0768,
+    99.9294,
+    99.9943,
+    99.9733,
+    100.0554,
+    100.0401,
+    100.2192,
+    100.1734,
+    100.1651,
+    100.2753,
+    100.1429,
+    100.0979,
+    100.0496,
+    100.1299,
+    100.0877,
+    100.112,
+    100.0745,
+    100.0116,
+    100.0471,
+    100.197,
+    100.1248,
+    100.1002,
+    99.9618,
+    99.9526,
+    99.9094,
+    99.9189,
+    100.087,
+    100.0701,
+    100.2354,
+    100.215,
+    100.142,
+    100.1011,
+    100.1046,
+    100.096,
+    100.1791,
+    100.2051,
+    100.1981,
+    100.408,
+    100.261,
+    100.2006,
+    100.0275,
+    100.0188,
+    100.0343,
+    99.9796,
+    99.8944,
+    99.7917,
+    99.6,
+    99.72,
+    99.7157,
+    99.7665,
+    99.7958,
+    99.6961,
+    99.753,
+    99.6818,
+    99.6126,
+    99.4397,
+    99.6915,
+    99.7164,
+    99.8595,
+    99.9076,
+    99.687,
+    99.7023,
+    99.7527,
+    99.6369,
+    99.7498,
+    99.7809,
+    99.767,
+    99.6994,
+    99.6936,
+    99.5663,
+    99.5987,
+    99.474,
+    99.5057,
+    99.3502,
+    99.4916,
+    99.541,
+    99.4588,
+    99.5765,
+    99.5437,
+    99.57,
+    99.5938,
+    99.3985,
+    99.271,
+    99.2345,
+    99.2489,
+    99.1777,
+    99.1782,
+    99.0068,
+    98.9836,
+    99.1297,
+    99.2111,
+    99.3141,
+    99.316,
+    99.3383,
+    99.3669,
+    99.3939,
+    99.5192,
+    99.6572,
+    99.6917,
+    99.5809,
+    99.6103,
+    99.589,
+    99.5334,
+    99.5113,
+    99.5099,
+    99.3044,
+    99.3744,
+    99.5597,
+    99.6475,
+    99.6015,
+    99.7251,
+    99.7262,
+    99.6518,
+    99.5381,
+    99.6421,
+    99.6047,
+    99.471,
+    99.4436,
+    99.4454,
+    99.2254,
+    99.2309,
+    99.283,
+    99.4307,
+    99.4671,
+    99.544,
+    99.5267,
+    99.6251,
+    99.7168,
+    99.6975,
+    99.7813,
+    99.9309,
+    99.7313,
+    99.6041,
+    99.6274,
+    99.6191,
+    99.7179,
+    99.7661,
+    99.7443,
+    99.7886,
+    99.7815,
+    99.7083,
+    99.838,
+    100.0065,
+    99.9634,
+    99.9112,
+    100.0471,
+    100.1707,
+    100.214,
+    100.2255,
+    100.3589,
+    100.4117,
+    100.3139,
+    100.4892,
+    100.5428,
+    100.5907,
+    100.5676,
+    100.703,
+    100.7469,
+    100.74,
+    100.7942,
+    100.8274,
+    100.8984,
+    100.8557,
+    100.8653,
+    100.9618,
+    101.061,
+    101.0562,
+    100.9793,
+    100.9601,
+    100.9869,
+    100.9976,
+    100.9949,
+    100.7997,
+    100.7685,
+    100.6679,
+    100.5446,
+    100.502,
+    100.8225,
+    100.8011,
+    100.7639,
+    100.8935,
+    100.8494,
+    100.9381,
+    100.9126,
+    100.7829,
+    100.7444,
+    100.5649,
+    100.5493,
+    100.5153,
+    100.3665,
+    100.2753,
+    100.1611,
+    100.0711,
+    100.1,
+    100.1996,
+    100.2323,
+    100.0107,
+    99.9619,
+    99.9624,
+    99.9765,
+    100.154,
+    99.988,
+    100.0392,
+    99.9482,
+    99.8884,
+    99.8929,
+    99.9846,
+    99.9941,
+    99.8055,
+    99.9851,
+    100.0941,
+    100.1908,
+    100.2306,
+    100.3204,
+    100.4176,
+    100.381,
+    100.2995,
+    100.2411,
+    100.2392,
+    100.2321,
+    100.1234,
+    100.0509,
+    100.036,
+    99.9856,
+    99.9171,
+    99.9887,
+    99.9297,
+    100.0063,
+    99.8771,
+    99.9125,
+    100.0213,
+    99.9865,
+    99.9919,
+    100.1308,
+    100.134,
+    100.188,
+    100.1859,
+    100.0981,
+    100.1313,
+    100.2582,
+    100.1944,
+    100.263,
+    100.349,
+    100.4453,
+    100.3193,
+    100.1511,
+    99.9567,
+    99.7795,
+    99.6979,
+    99.6445,
+    99.6815,
+    99.8255,
+    99.5537,
+    99.5529,
+    99.5709,
+    99.5734,
+    99.5834,
+    99.7433,
+    99.6449,
+    99.6662,
+    99.6751,
+    99.5279,
+    99.5849,
+    99.6462,
+    99.8537,
+    99.7865,
+    99.7633,
+    99.8359,
+    99.776,
+    99.806,
+    99.7601,
+    99.9641,
+    99.924,
+    99.8346,
+    99.7714,
+    99.7964,
+    100.0016,
+    100.0468,
+    99.9703,
+    100.0471,
+    100.105,
+    99.9942,
+    99.9789,
+    100.0756,
+    100.1277,
+    100.1296,
+    100.0343,
+    100.1714,
+    100.195,
+    100.2472,
+    100.3547,
+    100.3408,
+    100.6288,
+    100.5871,
+    100.5933,
+    100.5406,
+    100.5726,
+    100.6115,
+    100.5816,
+    100.4783,
+    100.3774,
+    100.34,
+    100.329,
+    100.4501,
+    100.5834,
+    100.592,
+    100.6307,
+    100.6114,
+    100.5898,
+    100.7188,
+    100.7445,
+    100.9305,
+    100.9133,
+    100.8916,
+    100.9517,
+    100.8982,
+    100.8511,
+    100.7356,
+    100.9113,
+    100.8765,
+    100.8253,
+    100.6672,
+    100.8113,
+    100.7754,
+    100.7836,
+    100.7256,
+    100.7361,
+    100.6268,
+    100.7088,
+    100.7039,
+    100.628,
+    100.7019,
+    100.7452,
+    100.7958,
+    100.9638,
+    100.633,
+    100.6067,
+    100.5607,
+    100.4798,
+    100.557,
+    100.5079,
+    100.5915,
+    100.4651,
+    100.5437,
+    100.5996,
+    100.5321,
+    100.4628,
+    100.5752,
+    100.5482,
+    100.5137,
+    100.6182,
+    100.3857,
+    100.3854,
+    100.5988,
+    100.5452,
+    100.5771,
+    100.5661,
+    100.5761,
+    100.5045,
+    100.5221,
+    100.4532,
+    100.5538,
+    100.4808,
+    100.5371,
+    100.4852,
+    100.6344,
+    100.5729,
+    100.5231,
+    100.6715,
+    100.5366,
+    100.5281,
+    100.433,
+    100.3143,
+    100.2614,
+    100.2828,
+    100.3814,
+    100.3402,
+    100.5433,
+    100.55,
+    100.3667,
+    100.4578,
+    100.4685,
+    100.5609,
+    100.4999,
+    100.418,
+    100.5001,
+    100.5009,
+    100.4193,
+    100.3788,
+    100.4122,
+    100.4523,
+    100.5743,
+    100.6245,
+    100.5765,
+    100.6803,
+    100.7519,
+    100.6888,
+    100.5831,
+    100.5281,
+    100.4686,
+    100.4796,
+    100.5486,
+    100.5272,
+    100.4782,
+    100.5173,
+    100.4975,
+    100.2395,
+    100.3098,
+    100.2614,
+    100.1519,
+    100.0837,
+    100.1358,
+    100.2566,
+    100.2046,
+    100.2601,
+    100.296,
+    100.2393,
+    100.2441,
+    100.2952,
+    100.1374,
+    100.178,
+    100.1079,
+    99.9641,
+    99.9151,
+    99.9853,
+    100.0562,
+    99.9455,
+    99.753,
+    99.7811,
+    99.9463,
+    99.9079,
+    100.0518,
+    99.8604,
+    99.8549,
+    99.9576,
+    99.9376,
+    99.7583,
+    99.6343,
+    99.5505,
+    99.6439,
+    99.5099,
+    99.5195,
+    99.4257,
+    99.4223,
+    99.4109,
+    99.2646,
+    99.2617,
+    99.0704,
+    99.167,
+    99.2144,
+    99.155,
+    99.0867,
+    99.0708,
+    99.1185,
+    99.197,
+    99.1635,
+    99.0521,
+    99.1181,
+    99.1156,
+    99.2403,
+    99.3488,
+    99.4445,
+    99.4418,
+    99.3805,
+    99.3791,
+    99.4887,
+    99.506,
+    99.5226,
+    99.6019,
+    99.6105,
+    99.6462,
+    99.3625,
+    99.3044,
+    99.2281,
+    99.2858,
+    99.307,
+    99.5084,
+    99.6005,
+    99.76,
+    99.8123,
+    99.6828,
+    99.8694,
+    99.7155,
+    99.879,
+    99.6878,
+    99.684,
+    99.655,
+    99.6984,
+    99.8059,
+    99.7059,
+    99.7367,
+    99.605,
+    99.6245
+  ],
+  "order_flow": [
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000934,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000269,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000348,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000408,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001291,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001743,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000851,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000892,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001473,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00065,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00021,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000822,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000153,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00179,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000457,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -8.3e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001101,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00132,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00045,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000482,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000802,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000421,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000243,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000374,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000629,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000355,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001498,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000721,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000246,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001383,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -9.3e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000432,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 9.5e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001682,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000169,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001652,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000203,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000729,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000409,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 3.5e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -8.6e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00083,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00026,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -7e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.002095,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001464,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000603,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001728,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -8.7e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000155,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000547,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000852,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001029,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001921,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001205,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -4.3e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00051,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000294,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000999,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000571,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000714,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000695,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001736,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.002533,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00025,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001435,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000482,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.002208,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000154,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000505,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00116,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001134,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000312,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00014,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000677,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -5.8e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001277,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000325,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001252,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000319,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001563,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001423,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000496,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000826,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001183,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000329,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000264,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000239,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001961,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001283,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000368,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000146,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000718,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 5e-06,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001728,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000234,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001476,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000822,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001038,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 1.9e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000225,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000288,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000271,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001261,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001387,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000346,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001111,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000295,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000214,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000559,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000222,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -1.4e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.002066,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000705,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001865,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000882,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000461,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001241,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 1.1e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000746,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001141,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001044,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000376,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001343,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000276,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 1.8e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.002212,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 5.6e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000525,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001488,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000366,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000773,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000174,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000988,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00092,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000194,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00084,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.0015,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001997,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001275,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000234,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -8.4e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000991,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000484,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000219,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000444,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -7.1e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000733,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001301,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001688,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000431,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000522,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001361,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001235,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000433,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000115,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001331,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000526,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000974,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001748,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000533,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000476,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000229,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001347,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000436,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -6.8e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000538,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00033,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000704,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000423,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 9.5e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000957,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000983,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -4.7e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000761,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00019,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000265,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000106,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -2.7e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001932,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00031,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000998,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001224,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000424,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.003189,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000212,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00037,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001286,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000437,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000879,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000252,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001285,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000382,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001782,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000155,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000338,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00148,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000908,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001139,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000898,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000289,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000995,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000327,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.002211,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000488,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 5e-06,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000141,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001775,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001657,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000512,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00091,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000599,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 4.5e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000918,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 9.5e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001886,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.0018,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00109,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000966,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000398,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000896,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000969,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000364,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000811,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000582,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -1.9e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -7e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001084,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000724,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000149,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000503,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000685,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000716,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00059,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000767,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001292,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000355,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001088,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000348,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 5.4e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001389,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 3.2e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000539,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -2.1e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000876,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000332,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001267,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000636,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000685,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000858,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00096,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001255,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001676,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001941,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001773,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000818,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000536,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000372,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001445,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.002723,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -8e-06,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000181,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 2.5e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000101,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001606,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000986,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000214,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 9e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001476,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000573,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000616,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.002082,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000673,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000233,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000727,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.0006,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000301,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00046,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.002044,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000402,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000895,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000633,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000251,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.002057,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000452,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000765,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000768,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000579,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001107,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000153,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000967,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000521,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 1.9e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000952,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00137,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000236,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000521,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001072,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000138,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00287,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000414,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 6.1e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000524,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000318,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000387,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000297,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001027,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001004,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000372,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00011,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001207,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001327,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 8.5e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000385,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000192,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000215,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001282,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000255,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001846,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00017,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000216,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000595,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00053,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000466,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001145,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001744,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000345,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000508,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001568,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001432,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000356,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 8.1e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000575,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000104,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001085,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000815,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -4.8e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000754,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000734,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00043,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000502,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001666,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.003277,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000262,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000457,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000805,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000769,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000488,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000832,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001257,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000782,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000556,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000671,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00069,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001119,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000268,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000344,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001039,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.002311,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -3e-06,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.002125,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000533,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000318,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000109,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.0001,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000712,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000175,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000685,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001001,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000726,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00056,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000516,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001485,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000611,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000495,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001477,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00134,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -8.5e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000946,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001182,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000527,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000213,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000984,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00041,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.002024,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 6.7e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001823,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000908,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000106,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00092,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000606,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000815,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000817,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 8e-06,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000812,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000403,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000333,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000399,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001215,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000499,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000477,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001032,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000711,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000626,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00105,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000547,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000592,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000109,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000686,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000213,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000488,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000389,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000197,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.002567,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000702,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000483,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001092,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000681,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00052,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001207,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000518,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000554,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000359,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000566,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 4.8e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000509,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001573,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000406,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000699,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001437,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00049,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000702,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000709,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001106,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001926,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000282,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001656,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000384,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001441,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001913,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -5.5e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001028,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.0002,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001794,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001243,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000841,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000938,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001345,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 9.7e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000942,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -3.4e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000115,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001472,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -2.9e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001927,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000975,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000478,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000599,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000689,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.00016,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000481,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000792,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000338,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001123,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000666,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -2.5e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001258,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001093,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000963,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -2.7e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000617,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -1.4e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001103,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000174,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000167,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000797,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 8.7e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000359,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.002847,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000585,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000768,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000582,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000214,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.002029,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000926,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001601,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000524,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001297,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001872,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001541,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.00164,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001915,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -3.9e-05,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.000291,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000436,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.001078,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001002,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000309,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": -0.001321,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    },
+    {
+      "buy_volume": 0,
+      "sell_volume": 0,
+      "total_volume": 0,
+      "order_imbalance": 0.0,
+      "epsilon": 0.000196,
+      "persona_volumes": {
+        "value": {
+          "buy": 0,
+          "sell": 0,
+          "hold": 30
+        }
+      }
+    }
+  ],
+  "agent_pnl": {
+    "value_000": 0.0,
+    "value_001": 0.0,
+    "value_002": 0.0,
+    "value_003": 0.0,
+    "value_004": 0.0,
+    "value_005": 0.0,
+    "value_006": 0.0,
+    "value_007": 0.0,
+    "value_008": 0.0,
+    "value_009": 0.0,
+    "value_010": 0.0,
+    "value_011": 0.0,
+    "value_012": 0.0,
+    "value_013": 0.0,
+    "value_014": 0.0,
+    "value_015": 0.0,
+    "value_016": 0.0,
+    "value_017": 0.0,
+    "value_018": 0.0,
+    "value_019": 0.0,
+    "value_020": 0.0,
+    "value_021": 0.0,
+    "value_022": 0.0,
+    "value_023": 0.0,
+    "value_024": 0.0,
+    "value_025": 0.0,
+    "value_026": 0.0,
+    "value_027": 0.0,
+    "value_028": 0.0,
+    "value_029": 0.0
+  },
+  "agent_trade_counts": {
+    "value_000": 0,
+    "value_001": 0,
+    "value_002": 0,
+    "value_003": 0,
+    "value_004": 0,
+    "value_005": 0,
+    "value_006": 0,
+    "value_007": 0,
+    "value_008": 0,
+    "value_009": 0,
+    "value_010": 0,
+    "value_011": 0,
+    "value_012": 0,
+    "value_013": 0,
+    "value_014": 0,
+    "value_015": 0,
+    "value_016": 0,
+    "value_017": 0,
+    "value_018": 0,
+    "value_019": 0,
+    "value_020": 0,
+    "value_021": 0,
+    "value_022": 0,
+    "value_023": 0,
+    "value_024": 0,
+    "value_025": 0,
+    "value_026": 0,
+    "value_027": 0,
+    "value_028": 0,
+    "value_029": 0
+  },
+  "agent_personas": {
+    "value_000": "value",
+    "value_001": "value",
+    "value_002": "value",
+    "value_003": "value",
+    "value_004": "value",
+    "value_005": "value",
+    "value_006": "value",
+    "value_007": "value",
+    "value_008": "value",
+    "value_009": "value",
+    "value_010": "value",
+    "value_011": "value",
+    "value_012": "value",
+    "value_013": "value",
+    "value_014": "value",
+    "value_015": "value",
+    "value_016": "value",
+    "value_017": "value",
+    "value_018": "value",
+    "value_019": "value",
+    "value_020": "value",
+    "value_021": "value",
+    "value_022": "value",
+    "value_023": "value",
+    "value_024": "value",
+    "value_025": "value",
+    "value_026": "value",
+    "value_027": "value",
+    "value_028": "value",
+    "value_029": "value"
+  },
+  "market_summary": {
+    "initial_price": 100.0,
+    "final_price": 99.6245,
+    "min_price": 98.9836,
+    "max_price": 101.061,
+    "total_ticks": 500,
+    "total_buy_volume": 0,
+    "total_sell_volume": 0
+  },
+  "metadata": {
+    "n_ticks": 500,
+    "initial_price": 100.0,
+    "fair_value": 100.0,
+    "seed": 42,
+    "n_agents": 30
+  }
+}

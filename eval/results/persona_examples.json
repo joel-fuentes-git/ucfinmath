@@ -1,0 +1,322 @@
+[
+  {
+    "label": "Strong uptrend, bullish news",
+    "description": "Price has risen 10% over 5 periods. Earnings beat announced.",
+    "market_state": {
+      "price_history": [
+        100.0,
+        102.0,
+        105.0,
+        107.0,
+        110.0
+      ],
+      "news": "Strong quarterly earnings beat analyst expectations.",
+      "fair_value": 104.0
+    },
+    "personas": {
+      "momentum": {
+        "reasoning": "The price has trended upward every single period over the last 5 periods, up 10% with consistent and accelerating gains. Strong earnings beat is a catalyst that typically draws in more momentum buyers and reinforces the trend. As a momentum trader, I chase this upward trend \u2014 the recent price action is my signal, not the fair value estimate. This is a high-conviction buy setup.",
+        "action": "BUY",
+        "quantity": 15
+      },
+      "value": {
+        "reasoning": "[Generation failed \u2014 re-run export to populate this entry.]",
+        "action": "HOLD",
+        "quantity": 0
+      },
+      "noise": {
+        "reasoning": "Price is up 10% in 5 periods and just got a strong earnings catalyst \u2014 this is a momentum trade all day. Other traders will see the earnings beat and FOMO in, pushing price even higher. Fair value at 104 is irrelevant when sentiment is this bullish. I'm buying aggressively to ride this wave before the crowd fully piles in.",
+        "action": "BUY",
+        "quantity": 15
+      }
+    }
+  },
+  {
+    "label": "Strong downtrend, negative news",
+    "description": "Price has fallen 10% over 5 periods. Analyst downgrade released.",
+    "market_state": {
+      "price_history": [
+        110.0,
+        107.0,
+        105.0,
+        102.0,
+        99.0
+      ],
+      "news": "Analyst downgrades stock citing margin compression.",
+      "fair_value": 106.0
+    },
+    "personas": {
+      "momentum": {
+        "reasoning": "[Generation failed \u2014 re-run export to populate this entry.]",
+        "action": "HOLD",
+        "quantity": 0
+      },
+      "value": {
+        "reasoning": "The current price of 99.0 is roughly 6.6% below my estimated fair value of 106.0, offering a reasonable margin of safety. The recent price decline and analyst downgrade may reflect short-term pessimism rather than a permanent impairment of intrinsic value. As a value investor, I focus on the price-to-value gap, not momentum or sentiment. I will initiate a moderate buy to capitalize on this discount.",
+        "action": "BUY",
+        "quantity": 8
+      },
+      "noise": {
+        "reasoning": "The price has been declining steadily for 5 straight periods, now down 10%, and a fresh analyst downgrade citing margin compression is going to spook the market even more. Sentiment is clearly bearish and other traders will react to this headline by selling. Even if fair value is 106, momentum is overwhelmingly negative and I don't want to be holding this when the next leg down hits. I'm selling aggressively to get out ahead of the crowd.",
+        "action": "SELL",
+        "quantity": 15
+      }
+    }
+  },
+  {
+    "label": "Price significantly below fair value",
+    "description": "Price at 92, fair value at 110. No strong trend.",
+    "market_state": {
+      "price_history": [
+        98.0,
+        96.0,
+        94.0,
+        93.0,
+        92.0
+      ],
+      "news": "Mixed economic data; market participants await clarity.",
+      "fair_value": 110.0
+    },
+    "personas": {
+      "momentum": {
+        "reasoning": "The price has declined consistently across all 5 periods from 98 to 92, a clear and unbroken downtrend of 6.12%. As a momentum trader, I follow the trend \u2014 this is a strong bearish signal with no reversal catalyst visible. Mixed news provides no reason to expect a trend change. I sell to capitalize on continued downward momentum.",
+        "action": "SELL",
+        "quantity": 14
+      },
+      "value": {
+        "reasoning": "The asset is trading at 92.0 versus an estimated fair value of 110.0, a discount of ~16.4%. This is a clear margin of safety opportunity. The recent price decline driven by mixed economic sentiment is creating fear-based selling, not fundamental deterioration. As a value investor, I buy when price is significantly below fair value, and this qualifies decisively.",
+        "action": "BUY",
+        "quantity": 15
+      },
+      "noise": {
+        "reasoning": "The price has dropped 6.12% over the window and is now sitting at 92 while fair value is 110 - that's an 18% discount! The downtrend looks like it's reaching exhaustion and other traders are clearly overselling on mixed news. I'm jumping in aggressively to buy the dip before the market corrects back toward fair value.",
+        "action": "BUY",
+        "quantity": 15
+      }
+    }
+  },
+  {
+    "label": "Price significantly above fair value",
+    "description": "Price at 118, fair value at 100. Recent momentum positive.",
+    "market_state": {
+      "price_history": [
+        108.0,
+        112.0,
+        114.0,
+        116.0,
+        118.0
+      ],
+      "news": "Modest sector rotation with no clear direction.",
+      "fair_value": 100.0
+    },
+    "personas": {
+      "momentum": {
+        "reasoning": "[Generation failed \u2014 re-run export to populate this entry.]",
+        "action": "HOLD",
+        "quantity": 0
+      },
+      "value": {
+        "reasoning": "The current price of 118.0 is 18% above my estimated fair value of 100.0, representing a significant overvaluation. As a value investor, I sell when price exceeds intrinsic value meaningfully. The recent upward price trend (9.26% gain over the window) is driven by momentum, not fundamentals, and the news provides no catalyst to revise my fair value estimate upward. I will sell to capitalize on this mispricing.",
+        "action": "SELL",
+        "quantity": 15
+      },
+      "noise": {
+        "reasoning": "Price has shown consistent upward momentum over 5 periods, rising 9.26%, and the trend is my friend right now. The news about sector rotation is vague but not negative, and I believe other momentum traders will continue pushing this higher. Fair value at 100 seems irrelevant when the tape is this strong. I'll buy but keep position size moderate given the lack of a clear catalyst.",
+        "action": "BUY",
+        "quantity": 8
+      }
+    }
+  },
+  {
+    "label": "Flat market, positive news surprise",
+    "description": "Price flat at 100. Unexpected positive catalyst arrives.",
+    "market_state": {
+      "price_history": [
+        100.0,
+        100.2,
+        99.8,
+        100.1,
+        100.0
+      ],
+      "news": "Major institutional investor discloses a large new stake.",
+      "fair_value": 101.0
+    },
+    "personas": {
+      "momentum": {
+        "reasoning": "Price history shows flat movement with no strong directional momentum, but the institutional investor disclosure is a significant catalyst that typically drives short-term upward price momentum as other traders follow. The recent tick from 100.1 to 100.0 is minor noise. I expect the institutional news to create buying momentum, so I'll take a moderate long position to ride the anticipated upward trend.",
+        "action": "BUY",
+        "quantity": 8
+      },
+      "value": {
+        "reasoning": "The current price of $100.0 sits below my estimated fair value of $101.0, offering a modest ~1% discount. The news of a major institutional investor taking a large stake is a positive fundamental signal, suggesting informed capital sees value here. Price has been stable, confirming no speculative froth. The margin of safety is small but the institutional validation supports a measured buy.",
+        "action": "BUY",
+        "quantity": 5
+      },
+      "noise": {
+        "reasoning": "A major institutional investor just disclosed a large stake \u2014 this is a massive bullish signal and the smart money knows something I don't want to miss. The stock is trading at 100.0 versus a fair value of 101.0, giving me a clear margin of safety. Other traders will pile in once they read this headline, driving the price up fast. I need to buy aggressively right now before the momentum kicks in.",
+        "action": "BUY",
+        "quantity": 18
+      }
+    }
+  },
+  {
+    "label": "Flat market, negative news surprise",
+    "description": "Price flat at 100. Unexpected negative catalyst arrives.",
+    "market_state": {
+      "price_history": [
+        100.0,
+        99.8,
+        100.2,
+        99.9,
+        100.0
+      ],
+      "news": "Regulatory investigation announced into core business.",
+      "fair_value": 99.0
+    },
+    "personas": {
+      "momentum": {
+        "reasoning": "The price history is flat with no clear momentum, but the regulatory investigation news is a classic catalyst for a sustained downward price trend. As a momentum trader, I anticipate that this news will trigger selling pressure that perpetuates into a downtrend. The most recent tick is flat, but the catalyst is strong enough to expect negative momentum to develop immediately. I will sell to ride the emerging downward momentum.",
+        "action": "SELL",
+        "quantity": 12
+      },
+      "value": {
+        "reasoning": "The current price of $100.0 exceeds my estimated fair value of $99.0, making this stock overvalued even before accounting for new risks. A regulatory investigation into the core business is a material fundamental threat that could significantly impair earnings and lower fair value further. As a value investor, I hold no position in overvalued assets and the regulatory news only strengthens the case to sell. The stable price history suggests the market hasn't fully priced in this risk yet.",
+        "action": "SELL",
+        "quantity": 10
+      },
+      "noise": {
+        "reasoning": "A regulatory investigation into the core business is hugely negative news \u2014 this is the kind of headline that triggers panic selling. The stock is already overvalued at 100.0 vs. fair value of 99.0, and sentiment is about to crater. I need to sell aggressively before the crowd piles in and drives the price down hard. This is an obvious move.",
+        "action": "SELL",
+        "quantity": 18
+      }
+    }
+  },
+  {
+    "label": "Recovery after sharp dip",
+    "description": "Price dropped then recovered. Neutral news.",
+    "market_state": {
+      "price_history": [
+        105.0,
+        98.0,
+        95.0,
+        99.0,
+        103.0
+      ],
+      "news": "Trading volume below average; no major catalysts.",
+      "fair_value": 104.0
+    },
+    "personas": {
+      "momentum": {
+        "reasoning": "The price has recovered strongly from 95 to 103 over the last three periods, showing clear upward momentum with consecutive gains of +4 and +4. As a momentum trader, I follow recent price trends rather than the overall window return. While volume is below average (reducing conviction), the short-term uptrend is intact and I want to ride it. I'll take a moderate long position.",
+        "action": "BUY",
+        "quantity": 8
+      },
+      "value": {
+        "reasoning": "The current price of 103.0 is modestly below the estimated fair value of 104.0, representing only about a 1% discount. As a value investor, I require a meaningful margin of safety before committing capital, and a 1% discount does not meet that threshold. Volume is below average with no catalysts, suggesting the market is in a quiet period. I will hold and wait for a more attractive entry point.",
+        "action": "HOLD",
+        "quantity": 0
+      },
+      "noise": {
+        "reasoning": "[Generation failed \u2014 re-run export to populate this entry.]",
+        "action": "HOLD",
+        "quantity": 0
+      }
+    }
+  },
+  {
+    "label": "Reversal after sharp spike",
+    "description": "Price spiked then pulled back. Sentiment mixed.",
+    "market_state": {
+      "price_history": [
+        95.0,
+        103.0,
+        108.0,
+        104.0,
+        100.0
+      ],
+      "news": "Mixed economic data; market participants await clarity.",
+      "fair_value": 97.0
+    },
+    "personas": {
+      "momentum": {
+        "reasoning": "The price peaked at 108 two periods ago and has fallen consecutively to 104 then 100, a clear downward momentum signal over the most recent trend. Despite a positive gain over the full 5-period window, the short-term momentum is decisively bearish with two straight declining periods. Mixed news provides no bullish catalyst to reverse the slide. As a momentum trader, I follow the recent trend direction and sell into this declining move.",
+        "action": "SELL",
+        "quantity": 12
+      },
+      "value": {
+        "reasoning": "The current price of $100.0 exceeds my estimated fair value of $97.0 by approximately 3%, meaning the asset is overvalued. As a value investor, I sell when price exceeds intrinsic value. The mixed economic news provides no justification for revising fair value upward. I will sell a modest quantity to reduce exposure to an overpriced asset.",
+        "action": "SELL",
+        "quantity": 5
+      },
+      "noise": {
+        "reasoning": "Price pulled back from 108 to 100, which looks like a clean support level psychologically. Even though fair value is 97, I think other traders see this as a buying opportunity at round-number support. The mixed news creates uncertainty but the dip-buyers will step in here. I'm confident we see a bounce.",
+        "action": "BUY",
+        "quantity": 12
+      }
+    }
+  },
+  {
+    "label": "Choppy volatile market",
+    "description": "Large swings in both directions. Uncertainty high.",
+    "market_state": {
+      "price_history": [
+        100.0,
+        106.0,
+        98.0,
+        104.0,
+        97.0
+      ],
+      "news": "Earnings miss amid weakening demand signals.",
+      "fair_value": 100.0
+    },
+    "personas": {
+      "momentum": {
+        "reasoning": "The most recent price move was a sharp decline from 104.0 to 97.0, a -6.7% drop in one period, establishing clear downward momentum. The overall window shows a -3% decline with the latest leg accelerating lower. The earnings miss and weakening demand news further confirm bearish momentum. As a momentum trader, I follow the trend and sell.",
+        "action": "SELL",
+        "quantity": 14
+      },
+      "value": {
+        "reasoning": "The current price of 97.0 is trading at a ~3% discount to my estimated fair value of 100.0. While the earnings miss is a negative signal, it appears partially priced in given the recent decline. As a value investor, I buy when price is below intrinsic value; the discount is modest but present. I will initiate a small position to reflect the limited margin of safety given the negative fundamental news.",
+        "action": "BUY",
+        "quantity": 4
+      },
+      "noise": {
+        "reasoning": "Earnings miss with weakening demand is a strong bearish signal \u2014 other traders will panic sell and drive the price lower. Price is already below fair value at 97 but momentum is negative and sentiment is turning ugly. I need to get ahead of the crowd and sell before the wave hits. The volatility in recent periods suggests this could drop sharply.",
+        "action": "SELL",
+        "quantity": 15
+      }
+    }
+  },
+  {
+    "label": "Neutral market at fair value",
+    "description": "Price exactly at fair value, no news, no trend.",
+    "market_state": {
+      "price_history": [
+        100.0,
+        100.5,
+        99.8,
+        100.2,
+        100.0
+      ],
+      "news": "No significant company news today.",
+      "fair_value": 100.0
+    },
+    "personas": {
+      "momentum": {
+        "reasoning": "The price has gone nowhere over the last 5 periods, ending exactly where it started at 100.0. The most recent tick was down from 100.2 to 100.0, but the overall momentum signal is flat and noisy with no clear directional trend. As a momentum trader, I require a discernible trend to act on \u2014 buying into stagnation or selling into a flat market offers no momentum edge. I hold and wait for a clearer signal.",
+        "action": "HOLD",
+        "quantity": 0
+      },
+      "value": {
+        "reasoning": "The current price of 100.0 equals my estimated fair value of 100.0, offering no margin of safety for a buy or sufficient overvaluation to trigger a sell. Price history shows tight oscillation around fair value with no trend away from intrinsic worth. There is no company news to suggest a reassessment of fundamentals. The rational action is to hold and wait for a meaningful price-to-value discrepancy.",
+        "action": "HOLD",
+        "quantity": 0
+      },
+      "noise": {
+        "reasoning": "The price has been consolidating tightly around 100 for 5 periods, and that kind of coiling action typically precedes a breakout. The recent recovery from 99.8 back to 100.0 suggests buying pressure is building. Even without news, I believe other traders are watching this same setup and will pile in soon - I want to be positioned ahead of that move. My gut says this goes higher.",
+        "action": "BUY",
+        "quantity": 8
+      }
+    }
+  }
+]

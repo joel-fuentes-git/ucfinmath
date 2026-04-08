@@ -7,7 +7,7 @@
 # --- HuggingFace fine-tuning stack ---
 transformers>=4.40
 peft>=0.10
-trl>=0.8
+trl>=0.20
 torch>=2.2
 datasets>=2.18
 accelerate>=0.29

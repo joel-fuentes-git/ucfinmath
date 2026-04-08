@@ -35,7 +35,7 @@ learning_rate: 0.0002
 lr_scheduler_type: "cosine"
 warmup_ratio: 0.05
 weight_decay: 0.01
-max_seq_length: 512
+max_length: 512
 
 # Output
 output_dir: "training/adapters/noise"

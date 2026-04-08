@@ -195,8 +195,8 @@ def run_finetuning(config: dict) -> None:
         import torch
         from datasets import Dataset
         from peft import LoraConfig, get_peft_model
-        from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
-        from trl import SFTTrainer
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        from trl import SFTConfig, SFTTrainer
     except ImportError as exc:
         print(
             f"Import error: {exc}\n"
@@ -252,7 +252,13 @@ def run_finetuning(config: dict) -> None:
     output_dir = config["output_dir"]
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
-    training_args = TrainingArguments(
+    # NOTE: As of TRL >= 0.12, SFT-specific arguments (max_length, dataset_text_field,
+    # etc.) live on SFTConfig rather than being passed to SFTTrainer directly. SFTConfig
+    # is a subclass of TrainingArguments, so all the standard HF training args still work.
+    # As of TRL >= 0.20, the kwarg formerly known as `max_seq_length` was renamed to
+    # `max_length` to align with the wider transformers tokenization API. We accept either
+    # spelling in the YAML config for backwards compatibility with older configs.
+    training_args = SFTConfig(
         output_dir=output_dir,
         num_train_epochs=config["num_train_epochs"],
         per_device_train_batch_size=config["per_device_train_batch_size"],
@@ -266,19 +272,18 @@ def run_finetuning(config: dict) -> None:
         bf16=config.get("bf16", True),
         fp16=config.get("fp16", False),
         report_to="none",  # Disable W&B / MLflow in this v1 implementation
+        max_length=config.get("max_length", config.get("max_seq_length", 512)),
     )
 
     # --- SFTTrainer ---
+    # NOTE: As of TRL >= 0.12, the `tokenizer` keyword was renamed to `processing_class`
+    # to align with the broader transformers Trainer API (which now treats tokenizers,
+    # image processors, and feature extractors uniformly).
     trainer = SFTTrainer(
         model=model,
         args=training_args,
         train_dataset=dataset,
-        tokenizer=tokenizer,
-        max_seq_length=config.get("max_seq_length", 512),
-        # Train on completions only (the assistant turn).
-        # SIMPLIFICATION: A production version would carefully verify that the loss mask
-        # is applied correctly to avoid training on prompt tokens.
-        dataset_text_field=None,
+        processing_class=tokenizer,
     )
 
     print(f"Starting training for persona '{persona}'...")
