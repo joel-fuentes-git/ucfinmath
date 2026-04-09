@@ -517,6 +517,7 @@ class SLMAgent(BaseAgent):
         self.base_model_name = base_model_name
         self.model = None
         self.tokenizer = None
+        self.device = None
 
         # Fallback agent for when model output cannot be parsed.
         self.fallback_agent = RuleBasedAgent(persona, agent_id + "_fallback")
@@ -575,6 +576,7 @@ class SLMAgent(BaseAgent):
         cached = _MODEL_CACHE.get(cache_key)
         if cached is not None:
             self.model, self.tokenizer = cached
+            self.device = next(self.model.parameters()).device
             return
 
         try:
@@ -587,30 +589,51 @@ class SLMAgent(BaseAgent):
                 "Or remove the adapters/ directory to fall back to RuleBasedAgent."
             ) from exc
 
-        print(f"[SLMAgent] Loading base model: {self.base_model_name}")
+        import torch
+
+        # Pick the best available accelerator. CUDA gets bfloat16 on Ampere+
+        # (matching the fine-tuning recipe in finetune.py so adapter weights map
+        # cleanly onto base weights), float16 on older GPUs. Apple MPS uses
+        # float16. CPU stays on float32 — slow but correct, preserving the
+        # "must run end-to-end without a GPU" guarantee from CLAUDE.md.
+        if torch.cuda.is_available():
+            device = torch.device("cuda")
+            dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+        elif hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+            device = torch.device("mps")
+            dtype = torch.float16
+        else:
+            device = torch.device("cpu")
+            dtype = torch.float32
+
+        print(
+            f"[SLMAgent] Loading base model: {self.base_model_name} "
+            f"(device={device}, dtype={dtype})"
+        )
         tokenizer = AutoTokenizer.from_pretrained(
             self.base_model_name, trust_remote_code=True
         )
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
-        import torch
         base_model = AutoModelForCausalLM.from_pretrained(
             self.base_model_name,
-            torch_dtype=torch.float32,  # Use float32 for CPU inference
+            torch_dtype=dtype,
             trust_remote_code=True,
         )
 
         print(f"[SLMAgent] Loading LoRA adapter from: {self.adapter_path}")
         model = PeftModel.from_pretrained(base_model, self.adapter_path)
+        model.to(device)
         model.eval()
 
         _MODEL_CACHE[cache_key] = (model, tokenizer)
         self.model = model
         self.tokenizer = tokenizer
+        self.device = device
         print(
             f"[SLMAgent] Model + adapter cached as "
-            f"'{Path(self.adapter_path).name}' (1 of {len(_MODEL_CACHE)} cached)."
+            f"'{Path(self.adapter_path).name}' (1 of {len(_MODEL_CACHE)} cached) on {device}."
         )
 
     def _build_prompt(self, market_state: dict) -> str:
@@ -719,7 +742,7 @@ class SLMAgent(BaseAgent):
                 tokenize=False,
                 add_generation_prompt=True,
             )
-            inputs = self.tokenizer(input_text, return_tensors="pt")
+            inputs = self.tokenizer(input_text, return_tensors="pt").to(self.device)
 
             with torch.no_grad():
                 outputs = self.model.generate(
