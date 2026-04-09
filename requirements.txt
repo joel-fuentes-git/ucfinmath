@@ -1,34 +1,110 @@
-# Requirements for trader-personas
-# Section III stack: fine-tuning, simulation, evaluation, and demo app
-#
-# Fine-tuning requires a GPU (A100 recommended, ~15 min per persona).
-# Simulation, evaluation, and the Streamlit app run on CPU only.
-
-# --- HuggingFace fine-tuning stack ---
-transformers>=4.40
-peft>=0.10
-trl>=0.20
-torch>=2.2
-datasets>=2.18
-accelerate>=0.29
-
-# --- Data generation ---
-anthropic>=0.25
-
-# --- Numerical / scientific ---
-numpy>=1.26
-scipy>=1.12
-matplotlib>=3.8
-
-# --- Visualization (app) ---
-plotly>=5.20
-
-# --- Demo app ---
-streamlit>=1.33
-
-# --- Notebooks ---
-jupyter>=1.0
-
-# --- Utilities ---
-pyyaml>=6.0
-tqdm>=4.66
+accelerate==1.13.0
+aiohappyeyeballs==2.6.1
+aiohttp==3.13.5
+aiosignal==1.4.0
+altair==6.0.0
+annotated-doc==0.0.4
+anyio==4.13.0
+asttokens @ file:///home/conda/feedstock_root/build_artifacts/asttokens_1763409923949/work
+attrs==26.1.0
+blinker==1.9.0
+cachetools==7.0.5
+certifi==2026.2.25
+charset-normalizer==3.4.7
+click==8.3.2
+colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1733218098505/work
+comm @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_comm_1753453984/work
+contourpy==1.3.3
+cycler==0.12.1
+datasets==4.8.4
+debugpy @ file:///D:/bld/bld/rattler-build_debugpy_1769745008/work
+decorator @ file:///home/conda/feedstock_root/build_artifacts/decorator_1740384970518/work
+dill==0.4.1
+executing @ file:///home/conda/feedstock_root/build_artifacts/executing_1756729339227/work
+filelock==3.25.2
+fonttools==4.62.1
+frozenlist==1.8.0
+fsspec==2026.2.0
+gitdb==4.0.12
+GitPython==3.1.46
+h11==0.16.0
+hf-xet==1.4.3
+httpcore==1.0.9
+httpx==0.28.1
+huggingface_hub==1.9.2
+idna==3.11
+ipykernel @ file:///D:/bld/bld/rattler-build_ipykernel_1770566174/work
+ipython @ file:///D:/bld/bld/rattler-build_ipython_1774610078/work
+ipython_pygments_lexers @ file:///home/conda/feedstock_root/build_artifacts/ipython_pygments_lexers_1737123620466/work
+jedi @ file:///home/conda/feedstock_root/build_artifacts/jedi_1733300866624/work
+Jinja2==3.1.6
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+jupyter_client @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_jupyter_client_1767954655/work
+jupyter_core @ file:///D:/bld/bld/rattler-build_jupyter_core_1760643889/work
+kiwisolver==1.5.0
+markdown-it-py==4.0.0
+MarkupSafe==3.0.3
+matplotlib==3.10.8
+matplotlib-inline @ file:///home/conda/feedstock_root/build_artifacts/matplotlib-inline_1761214490209/work
+mdurl==0.1.2
+mpmath==1.3.0
+multidict==6.7.1
+multiprocess==0.70.19
+narwhals==2.19.0
+nest_asyncio @ file:///home/conda/feedstock_root/build_artifacts/nest-asyncio_1733325553580/work
+networkx==3.6.1
+numpy==2.4.3
+packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1769093650/work
+pandas==3.0.2
+parso @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_parso_1770676243/work
+peft==0.18.1
+pillow==12.1.1
+platformdirs @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_platformdirs_1773199142/work
+plotly==6.6.0
+prompt_toolkit @ file:///home/conda/feedstock_root/build_artifacts/prompt-toolkit_1756321756983/work
+propcache==0.4.1
+protobuf==7.34.1
+psutil @ file:///D:/bld/bld/rattler-build_psutil_1769678167/work
+pure_eval @ file:///home/conda/feedstock_root/build_artifacts/pure_eval_1733569405015/work
+pyarrow==23.0.1
+pydeck==0.9.1
+Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1774796700044/work
+pyparsing==3.3.2
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_python-dateutil_1751104122/work
+pywin32 @ file:///D:/bld/bld/rattler-build_pywin32_1756487145/work
+PyYAML==6.0.3
+pyzmq @ file:///D:/bld/bld/rattler-build_pyzmq_1771716967/work
+referencing==0.37.0
+regex==2026.4.4
+requests==2.33.1
+rich==14.3.3
+rpds-py==0.30.0
+safetensors==0.7.0
+scipy==1.17.1
+setuptools==70.2.0
+shellingham==1.5.4
+six @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_six_1753199211/work
+smmap==5.0.3
+stack_data @ file:///home/conda/feedstock_root/build_artifacts/stack_data_1733569443808/work
+streamlit==1.56.0
+sympy==1.14.0
+tenacity==9.1.4
+tokenizers==0.22.2
+toml==0.10.2
+torch==2.11.0+cu128
+torchaudio==2.11.0+cu128
+torchvision==0.26.0+cu128
+tornado @ file:///D:/bld/tornado_1774357956751/work
+tqdm==4.67.3
+traitlets @ file:///home/conda/feedstock_root/build_artifacts/traitlets_1733367359838/work
+transformers==5.5.0
+trl==1.0.0
+typer==0.24.1
+typing_extensions==4.15.0
+tzdata==2026.1
+urllib3==2.6.3
+watchdog==6.0.0
+wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_1770634525285/work
+xxhash==3.6.0
+yarl==1.23.0
