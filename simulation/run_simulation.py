@@ -38,6 +38,7 @@ Key design decisions:
 import argparse
 import json
 import sys
+import time
 from pathlib import Path
 from typing import Optional
 
@@ -116,6 +117,14 @@ def run_simulation(
     # Per-tick log of all agent decisions.
     all_tick_decisions: list[list[dict]] = []
 
+    # Progress reporting. Silent 500-tick loops with SLM inference look hung
+    # from the outside; a periodic tick/rate line tells the user the sim is
+    # alive and gives enough signal to estimate total runtime. PROGRESS_EVERY
+    # is set so we print ~10 updates over a standard 500-tick run.
+    PROGRESS_EVERY = max(1, n_ticks // 10)
+    sim_start = time.perf_counter()
+    last_progress_time = sim_start
+
     for tick in range(n_ticks):
         market_state = market.get_state()
 
@@ -145,6 +154,28 @@ def run_simulation(
         for agent, decision in zip(agents, tick_decisions):
             if decision["action"] != "HOLD":
                 agent.execute_trade(decision["action"], decision["quantity"], new_price)
+
+        # Periodic progress update. Reports cumulative and recent tick rates
+        # so slowdowns (e.g. GPU contention, thermal throttling) are visible.
+        if (tick + 1) % PROGRESS_EVERY == 0 or (tick + 1) == n_ticks:
+            now = time.perf_counter()
+            elapsed = now - sim_start
+            recent_elapsed = now - last_progress_time
+            avg_rate = (tick + 1) / elapsed if elapsed > 0 else 0.0
+            recent_rate = (
+                PROGRESS_EVERY / recent_elapsed if recent_elapsed > 0 else 0.0
+            )
+            remaining = max(0, n_ticks - (tick + 1))
+            eta = remaining / avg_rate if avg_rate > 0 else 0.0
+            print(
+                f"  [sim] tick {tick + 1}/{n_ticks} "
+                f"price={new_price:.2f} "
+                f"recent={recent_rate:.2f} t/s "
+                f"avg={avg_rate:.2f} t/s "
+                f"eta={eta:.0f}s",
+                flush=True,
+            )
+            last_progress_time = now
 
     # Final market price for P&L calculation.
     final_price = market.price_history[-1]

@@ -631,6 +631,16 @@ class SLMAgent(BaseAgent):
         print(f"[SLMAgent] Loading LoRA adapter from: {self.adapter_path}")
         model = PeftModel.from_pretrained(base_model, self.adapter_path)
         model.to(device)
+
+        # Merge LoRA weights into the base model for inference. Without this,
+        # every forward pass pays an extra LoRA matmul per targeted linear
+        # layer, which is the dominant per-token cost for a small model on
+        # GPU. merge_and_unload() folds the delta weights into the base
+        # linears and returns a plain transformers CausalLM — inference speed
+        # now matches the base model. Safe because the cache is read-only
+        # during simulation; we never train from it.
+        print("[SLMAgent] Merging LoRA weights into base for inference...")
+        model = model.merge_and_unload()
         model.eval()
 
         _MODEL_CACHE[cache_key] = (model, tokenizer)
@@ -639,7 +649,8 @@ class SLMAgent(BaseAgent):
         self.device = device
         print(
             f"[SLMAgent] Model + adapter cached as "
-            f"'{Path(self.adapter_path).name}' (1 of {len(_MODEL_CACHE)} cached) on {device}."
+            f"'{Path(self.adapter_path).name}' "
+            f"({len(_MODEL_CACHE)} model(s) now cached) on {device}."
         )
 
     def _build_prompt(self, market_state: dict) -> str:
@@ -753,7 +764,7 @@ class SLMAgent(BaseAgent):
             with torch.no_grad():
                 outputs = self.model.generate(
                     **inputs,
-                    max_new_tokens=200,
+                    max_new_tokens=128,
                     do_sample=True,
                     temperature=0.7,
                     pad_token_id=self.tokenizer.eos_token_id,
@@ -898,7 +909,7 @@ def _decide_slm_batch(
         with torch.no_grad():
             outputs = model.generate(
                 **inputs,
-                max_new_tokens=200,
+                max_new_tokens=128,
                 do_sample=True,
                 temperature=0.7,
                 pad_token_id=tokenizer.eos_token_id,
