@@ -19,6 +19,12 @@ Key design decisions:
       adapter directory via a module-level cache (_MODEL_CACHE). This means a
       30-agent population with three personas loads three models, not 30, which is
       essential for memory feasibility when running on a laptop.
+    - Inference is batched at the tick level via the top-level batched_decide()
+      helper. All SLMAgents that share a loaded model are pooled into a single
+      model.generate() call per tick, so a 30-agent homogeneous population costs
+      one generate call per tick instead of thirty. The run_simulation orchestrator
+      calls batched_decide() directly; the per-agent SLMAgent.decide() method
+      remains available for standalone / notebook use.
     - The RuleBasedAgent's rules are intentionally simple and transparent. They are
       meant to demonstrate the behavioral contrast between personas, not to be
       realistic trading strategies.
@@ -777,3 +783,164 @@ class SLMAgent(BaseAgent):
             "persona": self.persona,
             "agent_id": self.agent_id,
         }
+
+
+# ---------------------------------------------------------------------------
+# Tick-level batched decisions
+# ---------------------------------------------------------------------------
+
+
+def batched_decide(agents: list, market_state: dict) -> list[dict]:
+    """
+    Make trading decisions for a whole population with batched SLM inference.
+
+    SLMAgents are grouped by their shared (adapter_path, base_model) — the same
+    key _MODEL_CACHE uses — so every group is guaranteed to touch one loaded
+    model. Each group is dispatched as a single batched model.generate() call.
+    RuleBasedAgents are handled individually on their existing fast path.
+
+    Args:
+        agents: A list of agent instances (any mix of SLMAgent / RuleBasedAgent).
+        market_state: The current market state dict, shared across all agents.
+
+    Returns:
+        A list of decision dicts in the same order as `agents`.
+
+    Why this matters:
+        model.generate() per agent is the dominant cost of a tick. A homogeneous
+        30-agent population collapses from 30 generate calls to 1; the 10/10/10
+        mixed population collapses from 30 to 3 (one per persona adapter). This
+        is the single largest wall-clock win available without changing the
+        simulation semantics.
+    """
+    decisions: list[Optional[dict]] = [None] * len(agents)
+
+    slm_groups: dict[tuple[str, str], list[tuple[int, "SLMAgent"]]] = {}
+    for idx, agent in enumerate(agents):
+        if isinstance(agent, SLMAgent):
+            key = (str(Path(agent.adapter_path).resolve()), agent.base_model_name)
+            slm_groups.setdefault(key, []).append((idx, agent))
+        else:
+            decisions[idx] = agent.decide(market_state)
+
+    for group in slm_groups.values():
+        group_decisions = _decide_slm_batch(group, market_state)
+        for (idx, _), decision in zip(group, group_decisions):
+            decisions[idx] = decision
+
+    return decisions  # type: ignore[return-value]
+
+
+def _decide_slm_batch(
+    group: list[tuple[int, "SLMAgent"]],
+    market_state: dict,
+) -> list[dict]:
+    """
+    Run one batched model.generate() call for a group of SLMAgents.
+
+    All agents in `group` share the same loaded model, tokenizer, and device by
+    construction (batched_decide groups them on the cache key). Prompts are
+    still built per-agent so the batch remains correct even if two agents in
+    the group ever diverged (e.g. different personas pointed at the same
+    adapter in a future experiment).
+
+    Args:
+        group: List of (original_index, SLMAgent) tuples. The index is only
+               used by the caller to splice decisions back into the full list.
+        market_state: The current market state dict.
+
+    Returns:
+        A list of decision dicts in the same order as `group`.
+
+    Why this matters:
+        Pooling prompts into one generate() call eliminates per-agent Python
+        overhead and lets the GPU exploit true batch parallelism — this is
+        where the tick-level speedup actually materializes.
+    """
+    import torch
+
+    first_agent = group[0][1]
+    tokenizer = first_agent.tokenizer
+    model = first_agent.model
+    device = first_agent.device
+
+    # Build one chat-templated prompt per agent. Kept in the same format as
+    # SLMAgent.decide() so batching does not drift from the train-time prompt.
+    input_texts: list[str] = []
+    for _, agent in group:
+        messages = [
+            {"role": "system", "content": PERSONA_IDENTITIES[agent.persona]},
+            {"role": "user", "content": agent._build_prompt(market_state)},
+        ]
+        input_texts.append(
+            tokenizer.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            )
+        )
+
+    # Left-padding is mandatory for batched generation: every prompt must end
+    # at the same position in the tensor so the newly generated tail lines up
+    # at `input_len:` for every row. We restore the prior padding_side after
+    # tokenizing so we do not leak state into unrelated call sites.
+    original_padding_side = getattr(tokenizer, "padding_side", "right")
+    tokenizer.padding_side = "left"
+    try:
+        inputs = tokenizer(
+            input_texts,
+            return_tensors="pt",
+            padding=True,
+        ).to(device)
+    finally:
+        tokenizer.padding_side = original_padding_side
+
+    decisions: list[dict] = []
+    try:
+        with torch.no_grad():
+            outputs = model.generate(
+                **inputs,
+                max_new_tokens=200,
+                do_sample=True,
+                temperature=0.7,
+                pad_token_id=tokenizer.eos_token_id,
+            )
+
+        input_len = inputs["input_ids"].shape[1]
+        for row, (_, agent) in enumerate(group):
+            new_token_ids = outputs[row][input_len:]
+            generated_text = tokenizer.decode(
+                new_token_ids, skip_special_tokens=True
+            )
+            parsed = agent._parse_model_output(generated_text)
+            if parsed is not None:
+                action, quantity = parsed
+            else:
+                fb = agent.fallback_agent.decide(market_state)
+                action, quantity = fb["action"], fb["quantity"]
+            decisions.append(
+                {
+                    "action": action,
+                    "quantity": quantity,
+                    "persona": agent.persona,
+                    "agent_id": agent.agent_id,
+                }
+            )
+    except Exception as exc:
+        # Preserve the per-decision fallback contract: if a batch blows up,
+        # every agent in that batch falls back to its rule-based twin rather
+        # than crashing the whole simulation.
+        print(
+            f"[SLMAgent batch] Inference error for {len(group)}-agent batch: "
+            f"{exc}. Using rule-based fallback for the whole group."
+        )
+        for _, agent in group:
+            fb = agent.fallback_agent.decide(market_state)
+            decisions.append(
+                {
+                    "action": fb["action"],
+                    "quantity": fb["quantity"],
+                    "persona": agent.persona,
+                    "agent_id": agent.agent_id,
+                }
+            )
+
+    return decisions

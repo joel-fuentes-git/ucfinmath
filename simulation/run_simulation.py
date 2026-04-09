@@ -24,6 +24,10 @@ Key design decisions:
     - The agent type actually used (per persona) is stamped into the saved JSON
       metadata under `agent_types`, so the Streamlit app and notebook can faithfully
       report which model produced any given run without re-deriving it.
+    - Each tick dispatches decisions through simulation.agent.batched_decide(), which
+      pools all SLMAgents sharing a loaded adapter into a single model.generate() call.
+      This is the dominant wall-clock win for SLM-backed runs: a 30-agent homogeneous
+      population runs 1 generate per tick instead of 30.
     - The simulation returns a complete log dict that is JSON-serializable. This means
       results can be inspected, plotted, and shared without re-running the simulation.
     - We fix the random seed per run so results are reproducible. Different compositions
@@ -44,7 +48,7 @@ if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
 from simulation.market import Market
-from simulation.agent import RuleBasedAgent, SLMAgent
+from simulation.agent import RuleBasedAgent, SLMAgent, batched_decide
 
 # Default location for fine-tuned LoRA adapters. Each persona is expected to live
 # in a subdirectory: adapters/momentum/, adapters/value/, adapters/noise/. Each
@@ -115,20 +119,22 @@ def run_simulation(
     for tick in range(n_ticks):
         market_state = market.get_state()
 
-        # Collect all agent decisions for this tick.
-        tick_orders = []
-        tick_decisions = []
+        # Collect all agent decisions for this tick. batched_decide() pools
+        # every SLMAgent sharing a loaded adapter into a single model.generate()
+        # call, so a 30-agent homogeneous population runs one generate per tick
+        # and a 10/10/10 mixed population runs three (one per persona adapter),
+        # instead of the 30 per-tick generates the naive per-agent loop did.
+        # RuleBasedAgents are still dispatched individually on their fast path.
+        tick_decisions = batched_decide(agents, market_state)
 
-        for agent in agents:
-            decision = agent.decide(market_state)
-            tick_decisions.append(decision)
-
-            # Convert decision to an order dict for the market.
-            tick_orders.append({
+        tick_orders = [
+            {
                 "action": decision["action"],
                 "quantity": decision["quantity"],
                 "persona": decision["persona"],
-            })
+            }
+            for decision in tick_decisions
+        ]
 
         all_tick_decisions.append(tick_decisions)
 
