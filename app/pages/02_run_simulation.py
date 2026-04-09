@@ -1,8 +1,6 @@
 """
 02_run_simulation.py — Simulation Explorer page for the Trader Personas demo app.
 
-Talk section: Section III — The Proposed Framework (simulation framework)
-
 Purpose:
     Allows users to explore pre-computed simulation runs across different persona
     compositions. Loads from eval/results/simulations/ — a directory of JSON files
@@ -111,7 +109,7 @@ if not simulations:
 
 with st.sidebar:
     st.markdown("## Simulation Explorer")
-    st.markdown("*Section III — Simulation framework*")
+    st.markdown("*Simulation framework*")
     st.divider()
 
     # Build display labels from the simulation data names.

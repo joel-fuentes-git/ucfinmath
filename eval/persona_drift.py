@@ -1,12 +1,10 @@
 """
 persona_drift.py — Open problem stubs for persona behavioral consistency analysis.
 
-Talk section: Section IV — Open Problems
-
 Purpose:
     This file is an intellectual signpost, not a full implementation. It outlines
     three measurement and analysis tasks related to persona stability and identifiability
-    in LLM-based agent simulations. These are presented as open problems during the talk.
+    in LLM-based agent simulations. These are presented as open problems.
 
     Each function raises NotImplementedError and contains a detailed docstring explaining:
     - What the function should compute
@@ -100,7 +98,7 @@ def measure_behavioral_consistency(
     raise NotImplementedError(
         "measure_behavioral_consistency is not yet implemented. "
         "See the docstring for a detailed discussion of the open problem. "
-        "This is Section IV material — a research direction, not a solved problem."
+        "This is a research direction, not a solved problem."
     )
 
 
@@ -174,7 +172,7 @@ def detect_persona_drift(
     raise NotImplementedError(
         "detect_persona_drift is not yet implemented. "
         "See the docstring for a discussion of context drift as an open problem. "
-        "This is Section IV material — a research direction, not a solved problem."
+        "This is a research direction, not a solved problem."
     )
 
 
@@ -251,7 +249,7 @@ def inverse_persona_identification(
     raise NotImplementedError(
         "inverse_persona_identification is not yet implemented. "
         "See the docstring for a discussion of the identifiability problem. "
-        "This is Section IV material: the inverse problem of agent-based simulation. "
+        "This is the inverse problem of agent-based simulation. "
         "A full implementation would require a labeled dataset of trade histories "
         "and a validated classification method."
     )

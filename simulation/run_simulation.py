@@ -1,8 +1,6 @@
 """
 run_simulation.py — Orchestrator for multi-agent market simulation runs.
 
-Talk section: Section III — The Proposed Framework
-
 Purpose:
     Runs the multi-agent market simulation and saves results to disk.
     Supports three operating modes via CLI flags:

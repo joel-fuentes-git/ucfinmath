@@ -1,8 +1,6 @@
 """
 finetune.py — LoRA fine-tuning for trader persona adapters.
 
-Talk section: Section III — The Proposed Framework
-
 Purpose:
     Fine-tunes a LoRA adapter on top of Qwen/Qwen2.5-1.5B-Instruct for one persona
     at a time. Each persona gets its own adapter saved to training/adapters/{persona}/.

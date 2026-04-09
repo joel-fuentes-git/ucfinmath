@@ -1,8 +1,6 @@
 """
 agent.py — Trader agents for the persona simulation.
 
-Talk section: Section III — The Proposed Framework
-
 Purpose:
     Defines two agent implementations:
     1. SLMAgent: Wraps a fine-tuned LoRA adapter and runs actual model inference.

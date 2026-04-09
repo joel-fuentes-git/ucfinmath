@@ -1,5 +1,4 @@
 # LoRA fine-tuning configuration for the Value Investor persona
-# Section III — The Proposed Framework
 #
 # Design notes:
 #   - Identical hyperparameters to momentum.yaml. We keep all three persona configs

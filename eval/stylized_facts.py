@@ -1,8 +1,6 @@
 """
 stylized_facts.py — Statistical tests and plots for financial stylized facts.
 
-Talk section: Section III / Section IV — Results and Open Problems Setup
-
 Purpose:
     Provides functions to test whether a simulated price series exhibits the two
     key stylized facts of real financial markets:

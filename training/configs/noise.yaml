@@ -1,5 +1,4 @@
 # LoRA fine-tuning configuration for the Noise Trader persona
-# Section III — The Proposed Framework
 #
 # Design notes:
 #   - The noise trader data has higher variance in reasoning and action than the other

@@ -1,8 +1,6 @@
 """
 generate_personas.py — Synthetic training data generation for trader personas.
 
-Talk section: Section III — The Proposed Framework
-
 Purpose:
     Uses the Anthropic API (claude-sonnet-4-6) to generate chain-of-thought reasoning traces
     for three trader personas: momentum, value, and noise. Each example consists of a market

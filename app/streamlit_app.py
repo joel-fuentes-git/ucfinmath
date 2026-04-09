@@ -1,8 +1,6 @@
 """
 streamlit_app.py — Main entry point for the Trader Personas demo app.
 
-Talk section: Sections II, III, IV (overview page)
-
 Purpose:
     Entry point for the Streamlit multi-page application. This page provides a conceptual
     overview of the project and navigation instructions. The actual content lives in the
@@ -32,21 +30,19 @@ st.set_page_config(
 
 with st.sidebar:
     st.markdown("## Trader Personas")
-    st.markdown("**University of Chicago**")
-    st.markdown("Financial Mathematics Program")
     st.divider()
     st.markdown(
         """
-        **Talk Section Map**
+        **Pages**
 
         - **Page 1** — Persona Inspector
-          *Section III: Fine-tuning framework*
+          *Fine-tuning framework*
 
         - **Page 2** — Simulation Explorer
-          *Section III: Simulation framework*
+          *Simulation framework*
 
         - **Page 3** — Hero Experiment
-          *Section III/IV: Results + open problems*
+          *Results + open problems*
         """
     )
     st.divider()
@@ -78,17 +74,17 @@ st.markdown(
 
 st.markdown(
     """
-    This demo accompanies a talk at the **University of Chicago Financial Mathematics Program**.
-
     **Going-in thesis**: Micro-level behavioral heterogeneity — agents reasoning in fundamentally
     different ways — should be necessary and sufficient to produce the macro-level stylized facts
     observed in real financial markets (fat tails, volatility clustering).
 
-    **What the recorded experiment actually shows** (see the Hero Experiment page): in a
-    minimal three-persona market with rule-based agents, behavioral heterogeneity is *necessary*
-    for both stationarity and for any volatility-clustering signal at all, but it is *not
-    sufficient* to reproduce fat tails. This is a sharper, more interesting empirical result
-    than the going-in thesis, and the talk treats it as the central Section IV motivator.
+    **Status of the demo**: every number currently shown on the Hero Experiment and
+    Simulation Explorer pages was produced by the hand-coded `RuleBasedAgent` fallback,
+    **not** by the fine-tuned LoRA SLM. The SLM inference run is pending, so the central
+    hypothesis — that *language-model-driven* behavioral heterogeneity reproduces stylized
+    facts — has not yet been tested. What is shown right now is a rule-based baseline; the
+    fine-tuned-SLM results are the next milestone, and the pages will be re-stamped once
+    those numbers exist.
     """
 )
 
@@ -99,7 +95,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown(
         """
-        **Section II — Background**
+        **Background**
 
         Why language models as traders?
         The LoRA persona approach.
@@ -110,7 +106,7 @@ with col1:
 with col2:
     st.markdown(
         """
-        **Section III — Framework**
+        **Framework**
 
         Data generation → LoRA fine-tuning → market simulation → evaluation.
         The three personas and their theoretical grounding.
@@ -121,7 +117,7 @@ with col2:
 with col3:
     st.markdown(
         """
-        **Section IV — Open Problems**
+        **Open Problems**
 
         Context drift in long simulations.
         Persona identifiability (the inverse problem).
@@ -143,9 +139,10 @@ st.markdown(
     2. **Simulation Explorer** — Explore pre-computed simulation runs across
        different persona compositions. See price dynamics, order flow, and P&L.
 
-    3. **Hero Experiment** — The central empirical result: the homogeneous markets fail
-       in two opposite ways (momentum-only runs away, value-only never trades), and the
-       mixed market produces volatility clustering but not fat tails.
+    3. **Hero Experiment** — Pre-computed results across the three persona compositions.
+       Currently populated by the `RuleBasedAgent` baseline (the SLM inference run is
+       pending), so the page reports what the rule-based caricature produces, not yet
+       what the fine-tuned SLM does.
     """
 )
 

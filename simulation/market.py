@@ -1,8 +1,6 @@
 """
 market.py — Minimal order-driven market for trader persona simulation.
 
-Talk section: Section III — The Proposed Framework
-
 Purpose:
     Implements a single-asset order-driven market with a simple price update rule.
     This module is intentionally minimal: it exists to create a feedback loop between

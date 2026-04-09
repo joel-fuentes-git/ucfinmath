@@ -1,22 +1,11 @@
 # Trader Personas: Heterogeneous SLM Agents in a Financial Market Simulation
 
-**Talk**: University of Chicago Financial Mathematics Program
 **Thesis**: Micro-level behavioral heterogeneity produces macro-level stylized facts that
 homogeneous agent populations cannot replicate.
 
 ---
 
-## Talk Section Map
-
-| Section | Topic | Key Files |
-|---|---|---|
-| II | Background: SLM fine-tuning + LLM-based market simulation | README (this section) |
-| III | Proposed Framework: data → fine-tuning → simulation → eval | `data/`, `training/`, `simulation/`, `eval/`, `notebooks/` |
-| IV | Open Problems: context drift, identifiability, equilibrium | `eval/persona_drift.py`, README (Open Problems section) |
-
----
-
-## Section II — Background
+## Background
 
 ### Why Language Models as Traders?
 
@@ -50,7 +39,7 @@ training data for the smaller model.
 
 ---
 
-## Section III — The Proposed Framework
+## The Proposed Framework
 
 ### Step 1: Data Generation (`data/generate_personas.py`)
 
@@ -232,10 +221,19 @@ The momentum-only market would trend excessively; the value-only market would be
 only the conflict between behavioral types would generate the realistic, heteroskedastic price
 dynamics we observe in real markets.
 
-### Actual Results (from the current run)
+### Current Results (rule-based agents — SLM inference results pending)
 
-The recorded run is in `eval/results/hero_experiment.json`. Computed log-return statistics
-across the 500-tick series for each condition:
+> **Important caveat.** Every number in the table below was produced by the
+> hand-coded `RuleBasedAgent` fallback, **not** by the fine-tuned LoRA SLM. The
+> demo currently runs the rule-based caricature end-to-end so it stays
+> reproducible on a laptop. The fine-tuned-SLM run is still pending, so the
+> central hypothesis — that *language-model-driven* behavioral heterogeneity
+> reproduces stylized facts — has **not yet been tested**. Read what follows as
+> a baseline against the rule-based caricature, not as a verdict on the
+> hypothesis itself.
+
+The recorded rule-based run is in `eval/results/hero_experiment.json`. Computed log-return
+statistics across the 500-tick series for each condition:
 
 | Condition | Final price | Excess kurtosis | ACF(r²) lag-1 | Total trades |
 |---|---|---|---|---|
@@ -243,7 +241,7 @@ across the 500-tick series for each condition:
 | Homogeneous Value    | $99.62     | +0.17       | -0.054 | 0 buys / 0 sells |
 | Mixed Population     | $103.36    | **−1.58**   | +0.122 | 46,683 buys / 45,448 sells |
 
-The empirical picture is **more interesting and more nuanced than the going-in hypothesis**:
+What the rule-based baseline shows:
 
 1. **Homogeneous Momentum became degenerate.** With only trend-followers and no contrarians,
    the population locked into a runaway upward trajectory: every agent bought every tick, no
@@ -262,16 +260,20 @@ The empirical picture is **more interesting and more nuanced than the going-in h
    times more volatile than the value-only condition (std 0.0069 vs 0.0010), and the lag-1
    autocorrelation of squared returns is +0.122 — modest but the only condition where it is
    meaningfully positive. **However, excess kurtosis is *negative* (−1.58).** The mixed market
-   is platykurtic, not leptokurtic. Behavioral diversity in this minimal market is necessary
-   to generate any volatility-clustering signal at all, but it is *not* sufficient to produce
-   the fat tails of real markets.
+   is platykurtic, not leptokurtic. Behavioral diversity *with three rule-based caricatures*
+   in this minimal market is necessary to generate any volatility-clustering signal at all,
+   but does not produce the fat tails of real markets.
 
-**What this tells us.** The going-in hypothesis is partially refuted by these specific runs.
-This is itself an honest empirical finding and a good Section IV motivator: a minimal market
-with three rule-based personas reproduces *one* of the two stylized facts (weak volatility
-clustering) but not the other (fat tails). The momentum-only pathology also tells us that the
-absence of contrarian agents is not "trending too much" — it is loss of stationarity entirely.
-Both observations point at the equilibrium-and-stability open problem.
+**What this tells us — and what it does not.** Against the rule-based baseline, the going-in
+hypothesis is only partially supported: a minimal market with three rule-based personas
+reproduces one of the two stylized facts (weak volatility clustering) but not the other (fat
+tails). The momentum-only pathology also tells us that the absence of contrarian agents is
+not "trending too much" — it is loss of stationarity entirely. **None of this yet speaks to
+the actual hypothesis under test**, which is whether *fine-tuned LoRA SLM* personas — with
+their richer, more context-sensitive reasoning — produce qualitatively different macro
+dynamics than these rule-based caricatures. That experiment is pending; the SLM inference
+run is the next milestone, and the hero experiment table will be re-stamped (and this
+section rewritten) once those numbers exist.
 
 ### Did the eval use the actual fine-tuned model?
 
@@ -311,7 +313,7 @@ export — re-run the export script with a valid `ANTHROPIC_API_KEY` to populate
 
 ---
 
-## Open Problems (Section IV)
+## Open Problems
 
 ### 1. Context Drift
 
@@ -417,24 +419,24 @@ trader-personas/
 ├── README.md                        # this file
 ├── requirements.txt
 ├── data/
-│   ├── generate_personas.py         # [Section III] LLM-based data generation
+│   ├── generate_personas.py         # LLM-based data generation
 │   └── personas/
 │       ├── momentum.jsonl           # ~300 examples (placeholder: 5)
 │       ├── value.jsonl
 │       └── noise.jsonl
 ├── training/
-│   ├── finetune.py                  # [Section III] LoRA fine-tuning
+│   ├── finetune.py                  # LoRA fine-tuning
 │   └── configs/
 │       ├── momentum.yaml
 │       ├── value.yaml
 │       └── noise.yaml
 ├── simulation/
-│   ├── market.py                    # [Section III] order book + price dynamics
-│   ├── agent.py                     # [Section III] rule-based and SLM agents
+│   ├── market.py                    # order book + price dynamics
+│   ├── agent.py                     # rule-based and SLM agents
 │   └── run_simulation.py            # orchestrator + CLI
 ├── eval/
-│   ├── stylized_facts.py            # [Section III/IV] fat tails + volatility clustering
-│   └── persona_drift.py             # [Section IV] open-problem stubs
+│   ├── stylized_facts.py            # fat tails + volatility clustering
+│   └── persona_drift.py             # open-problem stubs
 ├── notebooks/
 │   ├── 01_data_generation.ipynb
 │   ├── 02_finetuning_walkthrough.ipynb

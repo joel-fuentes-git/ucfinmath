@@ -1,5 +1,4 @@
 # LoRA fine-tuning configuration for the Momentum Trader persona
-# Section III — The Proposed Framework
 #
 # Design notes:
 #   - r=8 and lora_alpha=16 give a scaling factor of 2, which is a standard default
