@@ -5,20 +5,26 @@ Talk section: Section III — The Proposed Framework
 
 Purpose:
     Defines two agent implementations:
-    1. RuleBasedAgent: Implements each persona's logic as a simple hand-coded rule.
-       This runs on CPU with no model weights required. It is the default for all
-       notebooks, the hero experiment, and the Streamlit app.
-    2. SLMAgent: Wraps a fine-tuned LoRA adapter and runs actual model inference.
-       This requires a GPU (or at minimum a powerful CPU for quantized inference).
+    1. SLMAgent: Wraps a fine-tuned LoRA adapter and runs actual model inference.
+       This is the preferred agent type. The orchestrator (run_simulation.create_agents)
+       uses SLMAgent by default whenever LoRA adapters are available on disk.
+    2. RuleBasedAgent: Implements each persona's logic as a simple hand-coded rule.
+       This runs on CPU with no model weights required and is the automatic fallback
+       used by the orchestrator when adapters are missing or fail to load.
 
 Key design decisions:
     - Both agents expose the same interface: decide(market_state) -> dict. This makes
       them interchangeable in the simulation without any changes to the orchestrator.
+    - SLMAgent shares model + tokenizer across all agents that point at the same
+      adapter directory via a module-level cache (_MODEL_CACHE). This means a
+      30-agent population with three personas loads three models, not 30, which is
+      essential for memory feasibility when running on a laptop.
     - The RuleBasedAgent's rules are intentionally simple and transparent. They are
       meant to demonstrate the behavioral contrast between personas, not to be
       realistic trading strategies.
-    - The SLMAgent includes a fallback to rule-based logic if model output is
-      unparseable. This makes the simulation robust to occasional LLM failures.
+    - The SLMAgent includes a per-decision fallback to rule-based logic if a single
+      model output is unparseable. This is independent of the orchestrator-level
+      fallback, which kicks in only at startup if the adapter directory is missing.
     - All agents track their own cash, shares, trade history, and P&L. This keeps
       state encapsulated per-agent and makes the simulation easy to parallelize later.
     - Agents enforce a no-short-selling constraint: SELL is only executed if the agent
@@ -28,7 +34,42 @@ Key design decisions:
 import json
 import random
 from abc import ABC, abstractmethod
-from typing import Optional
+from pathlib import Path
+from typing import Any, Optional
+
+
+# ---------------------------------------------------------------------------
+# Module-level model cache
+# ---------------------------------------------------------------------------
+#
+# Loading a 1.5B-parameter base model + a LoRA adapter takes ~30s on CPU and
+# uses several GB of RAM. The hero experiment runs 30 agents at a time. We do
+# NOT want to load 30 copies of the model — instead, we cache (model, tokenizer)
+# tuples keyed by the resolved adapter path so all agents pointing at the same
+# adapter share weights. The model state is read-only during inference, so
+# sharing is safe.
+#
+# Cache key: (resolved adapter path string, base model name string)
+# Cache value: (model, tokenizer)
+_MODEL_CACHE: dict[tuple[str, str], tuple[Any, Any]] = {}
+
+
+def clear_model_cache() -> None:
+    """
+    Clear the in-process SLMAgent model cache.
+
+    Args:
+        None.
+
+    Returns:
+        None.
+
+    Why this matters:
+        Useful in long-lived processes (e.g. notebooks) where you want to free
+        GPU/RAM after a simulation completes, or when re-loading adapters that
+        have been updated on disk.
+    """
+    _MODEL_CACHE.clear()
 
 
 # ---------------------------------------------------------------------------
@@ -426,11 +467,16 @@ class SLMAgent(BaseAgent):
     """
     A trader agent backed by a fine-tuned SLM with a LoRA persona adapter.
 
-    This agent loads the base model and a LoRA adapter at initialization, then
-    runs inference on each tick to generate a reasoning trace and trading decision.
+    This agent loads the base model and a LoRA adapter at initialization (or
+    retrieves them from the module-level cache if another agent already loaded
+    the same adapter), then runs inference on each tick to generate a reasoning
+    trace and trading decision.
 
-    Note: This agent requires a GPU or a quantized model for practical use.
-    Use RuleBasedAgent for CPU-only simulation runs.
+    The orchestrator (run_simulation.create_agents) instantiates SLMAgent by
+    default whenever a valid adapter directory is present, and falls back to
+    RuleBasedAgent only if the adapter is missing or fails to load. Inference
+    is feasible on CPU for the 1.5B-parameter Qwen base model — slow but
+    workable on a laptop. A GPU is much faster.
 
     Attributes:
         (inherits from BaseAgent)
@@ -438,7 +484,9 @@ class SLMAgent(BaseAgent):
         base_model_name: HuggingFace model name for the base model.
         model: The loaded PEFT model (set after _load_model() is called).
         tokenizer: The loaded tokenizer.
-        fallback_agent: A RuleBasedAgent used when model output is unparseable.
+        fallback_agent: A RuleBasedAgent used when a single model decoding is
+                        unparseable. This is *per-decision* fallback, not the
+                        startup-time orchestrator fallback.
     """
 
     def __init__(
@@ -475,9 +523,42 @@ class SLMAgent(BaseAgent):
 
         self._load_model()
 
+    @staticmethod
+    def is_available(adapter_path: str) -> tuple[bool, str]:
+        """
+        Check whether a LoRA adapter directory looks usable, without loading it.
+
+        Args:
+            adapter_path: Path to the directory that should contain the LoRA adapter.
+
+        Returns:
+            A (ok, reason) tuple. `ok` is True if the directory exists and contains
+            an `adapter_config.json`. `reason` is an empty string when ok is True,
+            otherwise a short human-readable explanation suitable for logging.
+
+        Why this matters:
+            The orchestrator uses this to decide whether to instantiate SLMAgent
+            or fall back to RuleBasedAgent. We deliberately do *not* import
+            transformers/peft here — that check happens in _load_model so a
+            missing adapter directory does not require the heavy ML stack to be
+            installed for the fallback path to work.
+        """
+        path = Path(adapter_path)
+        if not path.exists():
+            return False, f"adapter directory does not exist: {adapter_path}"
+        if not path.is_dir():
+            return False, f"adapter path is not a directory: {adapter_path}"
+        config_file = path / "adapter_config.json"
+        if not config_file.exists():
+            return False, (
+                f"adapter_config.json missing in {adapter_path} "
+                "(expected a PEFT/LoRA adapter directory)"
+            )
+        return True, ""
+
     def _load_model(self) -> None:
         """
-        Load the base model and LoRA adapter.
+        Load the base model and LoRA adapter, using the module-level cache.
 
         Args:
             None.
@@ -487,8 +568,15 @@ class SLMAgent(BaseAgent):
 
         Why this matters:
             We use PEFT's PeftModel.from_pretrained() which handles the adapter merging
-            transparently. The base model weights are not modified.
+            transparently. The base model weights are not modified. The cache ensures
+            that 30 agents pointing at the same adapter only load the model once.
         """
+        cache_key = (str(Path(self.adapter_path).resolve()), self.base_model_name)
+        cached = _MODEL_CACHE.get(cache_key)
+        if cached is not None:
+            self.model, self.tokenizer = cached
+            return
+
         try:
             from peft import PeftModel
             from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -496,15 +584,15 @@ class SLMAgent(BaseAgent):
             raise ImportError(
                 f"SLMAgent requires transformers and peft: {exc}\n"
                 "Install with: pip install transformers peft\n"
-                "Or use RuleBasedAgent for CPU-only simulation."
+                "Or remove the adapters/ directory to fall back to RuleBasedAgent."
             ) from exc
 
-        print(f"[SLMAgent {self.agent_id}] Loading base model: {self.base_model_name}")
-        self.tokenizer = AutoTokenizer.from_pretrained(
+        print(f"[SLMAgent] Loading base model: {self.base_model_name}")
+        tokenizer = AutoTokenizer.from_pretrained(
             self.base_model_name, trust_remote_code=True
         )
-        if self.tokenizer.pad_token is None:
-            self.tokenizer.pad_token = self.tokenizer.eos_token
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
 
         import torch
         base_model = AutoModelForCausalLM.from_pretrained(
@@ -513,10 +601,17 @@ class SLMAgent(BaseAgent):
             trust_remote_code=True,
         )
 
-        print(f"[SLMAgent {self.agent_id}] Loading LoRA adapter from: {self.adapter_path}")
-        self.model = PeftModel.from_pretrained(base_model, self.adapter_path)
-        self.model.eval()
-        print(f"[SLMAgent {self.agent_id}] Model loaded successfully.")
+        print(f"[SLMAgent] Loading LoRA adapter from: {self.adapter_path}")
+        model = PeftModel.from_pretrained(base_model, self.adapter_path)
+        model.eval()
+
+        _MODEL_CACHE[cache_key] = (model, tokenizer)
+        self.model = model
+        self.tokenizer = tokenizer
+        print(
+            f"[SLMAgent] Model + adapter cached as "
+            f"'{Path(self.adapter_path).name}' (1 of {len(_MODEL_CACHE)} cached)."
+        )
 
     def _build_prompt(self, market_state: dict) -> str:
         """

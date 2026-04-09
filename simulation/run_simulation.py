@@ -14,8 +14,16 @@ Purpose:
     - --persona-counts: Runs a custom composition specified on the command line.
 
 Key design decisions:
-    - Uses RuleBasedAgent by default. No model weights required. This keeps the
-      simulation fast, portable, and runnable on any laptop.
+    - Uses SLMAgent (the fine-tuned LoRA SLM) when adapters are available on disk;
+      automatically falls back to RuleBasedAgent (hand-coded heuristic) when they
+      are not. Each persona is decided independently: a missing momentum adapter
+      forces momentum agents onto the rule-based path while value/noise can still
+      use their adapters.
+    - Adapters are looked up under `<project_root>/adapters/<persona>/` by default.
+      Override with --adapters-dir or set DEFAULT_ADAPTERS_DIR below.
+    - The agent type actually used (per persona) is stamped into the saved JSON
+      metadata under `agent_types`, so the Streamlit app and notebook can faithfully
+      report which model produced any given run without re-deriving it.
     - The simulation returns a complete log dict that is JSON-serializable. This means
       results can be inspected, plotted, and shared without re-running the simulation.
     - We fix the random seed per run so results are reproducible. Different compositions
@@ -27,6 +35,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
+from typing import Optional
 
 # Add the project root to sys.path so we can import simulation and eval modules
 # regardless of where the script is called from.
@@ -35,7 +44,14 @@ if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
 from simulation.market import Market
-from simulation.agent import RuleBasedAgent
+from simulation.agent import RuleBasedAgent, SLMAgent
+
+# Default location for fine-tuned LoRA adapters. Each persona is expected to live
+# in a subdirectory: adapters/momentum/, adapters/value/, adapters/noise/. Each
+# subdirectory must contain at minimum an `adapter_config.json` (PEFT format).
+# See README.md for the download link to the pre-trained adapters used in the talk.
+DEFAULT_ADAPTERS_DIR = _project_root / "adapters"
+DEFAULT_BASE_MODEL = "Qwen/Qwen2.5-1.5B-Instruct"
 
 
 # ---------------------------------------------------------------------------
@@ -162,35 +178,158 @@ def run_simulation(
 # ---------------------------------------------------------------------------
 
 
-def create_agents(persona_counts: dict[str, int], seed_offset: int = 0) -> list:
+def _resolve_agent_class_for_persona(
+    persona: str,
+    adapters_dir: Optional[Path],
+    base_model: str,
+    force_rules: bool,
+    require_adapters: bool,
+) -> tuple[str, str]:
     """
-    Create a list of RuleBasedAgent instances from a persona count dict.
+    Decide whether a given persona will use SLMAgent or RuleBasedAgent.
+
+    Args:
+        persona: The persona label ("momentum", "value", "noise").
+        adapters_dir: Root directory containing per-persona adapter subdirectories.
+                      May be None when force_rules is set.
+        base_model: HuggingFace name of the base model the adapters were trained against.
+        force_rules: If True, always return ("rules", reason) regardless of adapter state.
+        require_adapters: If True, raise instead of falling back when an adapter is missing.
+
+    Returns:
+        A tuple ("slm", "<resolved adapter path>") if the persona should use SLMAgent,
+        or ("rules", "<short reason>") if it should fall back to RuleBasedAgent.
+
+    Why this matters:
+        Per-persona resolution lets a partial set of adapters work — e.g. if you have
+        downloaded only the momentum adapter, momentum agents use the SLM and the other
+        two personas fall back to rules — rather than forcing an all-or-nothing choice.
+    """
+    if force_rules:
+        return "rules", "forced by --force-rules"
+    if adapters_dir is None:
+        return "rules", "no adapters directory configured"
+
+    candidate_path = adapters_dir / persona
+    ok, reason = SLMAgent.is_available(str(candidate_path))
+    if ok:
+        return "slm", str(candidate_path)
+
+    if require_adapters:
+        raise FileNotFoundError(
+            f"Adapter for persona '{persona}' not usable: {reason}\n"
+            f"Run without --require-adapters to fall back to RuleBasedAgent for this persona."
+        )
+
+    return "rules", reason
+
+
+def create_agents(
+    persona_counts: dict[str, int],
+    seed_offset: int = 0,
+    adapters_dir: Optional[Path] = DEFAULT_ADAPTERS_DIR,
+    base_model: str = DEFAULT_BASE_MODEL,
+    force_rules: bool = False,
+    require_adapters: bool = False,
+) -> tuple[list, dict[str, str]]:
+    """
+    Create a population of trader agents from a persona count dict.
+
+    For each persona, this tries to instantiate SLMAgent against the adapter at
+    `<adapters_dir>/<persona>/`. If that adapter is not present (or fails to load),
+    the persona automatically falls back to RuleBasedAgent. The decision is per-persona,
+    so a partial set of adapters works: missing personas use rules, present personas
+    use the fine-tuned SLM.
 
     Args:
         persona_counts: A dict mapping persona name -> number of agents.
                         E.g., {"momentum": 10, "value": 10, "noise": 10}
         seed_offset: An integer offset added to each agent's seed to ensure
-                     different agents have independent random states.
+                     different agents have independent random states (used by
+                     RuleBasedAgent's noise trader).
+        adapters_dir: Root directory containing per-persona LoRA adapter subdirectories.
+                      Defaults to <project_root>/adapters. Pass None together with
+                      force_rules=True to skip adapter detection entirely.
+        base_model: HuggingFace name of the base model the adapters were trained against.
+        force_rules: If True, every persona uses RuleBasedAgent regardless of whether
+                     adapters are present.
+        require_adapters: If True, raise FileNotFoundError when any persona's adapter
+                          is missing instead of silently falling back.
 
     Returns:
-        A list of RuleBasedAgent instances.
+        A (agents, agent_types) tuple. `agents` is the list of agent instances. `agent_types`
+        is a dict mapping persona -> "slm" or "rules", describing which agent class was
+        actually instantiated for that persona. The agent_types dict is what gets stamped
+        into saved simulation metadata so downstream consumers (notebook, Streamlit) can
+        faithfully report what was running.
 
     Why this matters:
-        A factory function makes it easy to create named agent populations
-        programmatically without repeating boilerplate.
+        A factory function with built-in adapter detection means the rest of the
+        codebase (the hero experiment, the notebook, the precompute script) doesn't
+        need to know whether the SLM or the rule-based fallback is in play — it just
+        gets a working population.
     """
-    agents = []
+    # First decide once per persona which class to use, so we can print a clear banner
+    # before any heavy model loading begins.
+    resolution: dict[str, tuple[str, str]] = {}
+    for persona in persona_counts:
+        resolution[persona] = _resolve_agent_class_for_persona(
+            persona,
+            adapters_dir=adapters_dir,
+            base_model=base_model,
+            force_rules=force_rules,
+            require_adapters=require_adapters,
+        )
+
+    print("[create_agents] Agent resolution per persona:")
+    for persona, (kind, detail) in resolution.items():
+        if kind == "slm":
+            print(f"  {persona:9s} -> SLMAgent  (adapter: {detail})")
+        else:
+            print(f"  {persona:9s} -> RuleBasedAgent  ({detail})")
+
+    agents: list = []
+    agent_types: dict[str, str] = {}
     agent_index = 0
 
     for persona, count in persona_counts.items():
+        kind, detail = resolution[persona]
+
+        if kind == "slm":
+            try:
+                for i in range(count):
+                    agent_id = f"{persona}_{i:03d}"
+                    agents.append(
+                        SLMAgent(
+                            persona=persona,
+                            agent_id=agent_id,
+                            adapter_path=detail,
+                            base_model_name=base_model,
+                        )
+                    )
+                    agent_index += 1
+                agent_types[persona] = "slm"
+                continue
+            except Exception as exc:  # noqa: BLE001 — we explicitly want broad coverage
+                if require_adapters:
+                    raise
+                print(
+                    f"[create_agents] WARNING: SLMAgent load failed for persona "
+                    f"'{persona}': {exc}. Falling back to RuleBasedAgent for this persona."
+                )
+                # Drop any partially-constructed agents for this persona before fallback.
+                agents = [a for a in agents if a.persona != persona]
+                agent_index -= count
+
+        # Rule-based path (either chosen or post-failure fallback).
         for i in range(count):
             agent_id = f"{persona}_{i:03d}"
-            # Each agent gets a unique seed derived from its index and the offset.
             agent_seed = seed_offset + agent_index * 31 + hash(agent_id) % 1000
             agents.append(RuleBasedAgent(persona, agent_id, seed=agent_seed))
             agent_index += 1
+        agent_types[persona] = "rules"
 
-    return agents
+    return agents, agent_types
 
 
 # ---------------------------------------------------------------------------
@@ -198,7 +337,14 @@ def create_agents(persona_counts: dict[str, int], seed_offset: int = 0) -> list:
 # ---------------------------------------------------------------------------
 
 
-def run_hero_experiment(output_path: Path, n_ticks: int = 500) -> None:
+def run_hero_experiment(
+    output_path: Path,
+    n_ticks: int = 500,
+    adapters_dir: Optional[Path] = DEFAULT_ADAPTERS_DIR,
+    base_model: str = DEFAULT_BASE_MODEL,
+    force_rules: bool = False,
+    require_adapters: bool = False,
+) -> None:
     """
     Run the three hero experiment conditions and save results.
 
@@ -210,6 +356,11 @@ def run_hero_experiment(output_path: Path, n_ticks: int = 500) -> None:
     Args:
         output_path: Path to save the JSON results file.
         n_ticks: Number of simulation ticks (default: 500).
+        adapters_dir: Root directory containing per-persona LoRA adapters.
+                      Forwarded to create_agents.
+        base_model: HuggingFace base model name for the adapters.
+        force_rules: Force RuleBasedAgent for every persona.
+        require_adapters: Raise instead of falling back when adapters are missing.
 
     Returns:
         None. Writes the results to output_path.
@@ -245,7 +396,14 @@ def run_hero_experiment(output_path: Path, n_ticks: int = 500) -> None:
         label = condition["label"]
         print(f"Running hero condition: {condition['name']} ({label})...")
 
-        agents = create_agents(condition["persona_counts"], seed_offset=condition["seed"])
+        agents, agent_types = create_agents(
+            condition["persona_counts"],
+            seed_offset=condition["seed"],
+            adapters_dir=adapters_dir,
+            base_model=base_model,
+            force_rules=force_rules,
+            require_adapters=require_adapters,
+        )
         log = run_simulation(
             agents,
             n_ticks=n_ticks,
@@ -253,6 +411,10 @@ def run_hero_experiment(output_path: Path, n_ticks: int = 500) -> None:
             fair_value=100.0,
             seed=condition["seed"],
         )
+
+        # Stamp the per-persona agent type into metadata so downstream consumers
+        # know whether the SLM or rules produced this run.
+        log["metadata"]["agent_types"] = agent_types
 
         # Store only the data needed for analysis and plotting.
         results[label] = {
@@ -266,7 +428,8 @@ def run_hero_experiment(output_path: Path, n_ticks: int = 500) -> None:
 
         print(
             f"  Done. Final price: {log['market_summary']['final_price']:.2f}, "
-            f"N trades: {sum(log['agent_trade_counts'].values())}"
+            f"N trades: {sum(log['agent_trade_counts'].values())}, "
+            f"agent types: {agent_types}"
         )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -276,7 +439,14 @@ def run_hero_experiment(output_path: Path, n_ticks: int = 500) -> None:
     print(f"\nHero experiment results saved to: {output_path}")
 
 
-def run_precompute_library(output_dir: Path, n_ticks: int = 500) -> None:
+def run_precompute_library(
+    output_dir: Path,
+    n_ticks: int = 500,
+    adapters_dir: Optional[Path] = DEFAULT_ADAPTERS_DIR,
+    base_model: str = DEFAULT_BASE_MODEL,
+    force_rules: bool = False,
+    require_adapters: bool = False,
+) -> None:
     """
     Run 6 predefined simulation compositions and save each as a JSON file.
 
@@ -339,7 +509,14 @@ def run_precompute_library(output_dir: Path, n_ticks: int = 500) -> None:
         filename = composition["filename"]
         print(f"Running: {composition['name']}...")
 
-        agents = create_agents(composition["persona_counts"], seed_offset=composition["seed"])
+        agents, agent_types = create_agents(
+            composition["persona_counts"],
+            seed_offset=composition["seed"],
+            adapters_dir=adapters_dir,
+            base_model=base_model,
+            force_rules=force_rules,
+            require_adapters=require_adapters,
+        )
         log = run_simulation(
             agents,
             n_ticks=n_ticks,
@@ -347,6 +524,7 @@ def run_precompute_library(output_dir: Path, n_ticks: int = 500) -> None:
             fair_value=100.0,
             seed=composition["seed"],
         )
+        log["metadata"]["agent_types"] = agent_types
 
         # Build the output record.
         record = {
@@ -366,7 +544,7 @@ def run_precompute_library(output_dir: Path, n_ticks: int = 500) -> None:
         with open(out_path, "w") as f:
             json.dump(record, f, indent=2)
 
-        print(f"  Saved to: {out_path}")
+        print(f"  Saved to: {out_path} (agent types: {agent_types})")
 
     print(f"\nPrecomputed {len(compositions)} simulation runs in {output_dir}")
 
@@ -461,15 +639,77 @@ def main() -> None:
         help="Output file path. Used only with --persona-counts (default: eval/results/custom_run.json).",
     )
 
+    # Adapter / agent-type controls. By default the orchestrator looks for LoRA
+    # adapters under <project_root>/adapters/<persona> and uses them when present;
+    # missing personas fall back to RuleBasedAgent.
+    parser.add_argument(
+        "--adapters-dir",
+        type=str,
+        default=str(DEFAULT_ADAPTERS_DIR),
+        help=(
+            "Directory containing LoRA adapter subdirectories named after each persona "
+            "(momentum/, value/, noise/). Defaults to <project_root>/adapters. "
+            "If a persona's subdirectory is missing or invalid, that persona "
+            "automatically falls back to RuleBasedAgent."
+        ),
+    )
+    parser.add_argument(
+        "--base-model",
+        type=str,
+        default=DEFAULT_BASE_MODEL,
+        help=(
+            f"HuggingFace name of the base model the adapters were trained against "
+            f"(default: {DEFAULT_BASE_MODEL})."
+        ),
+    )
+    parser.add_argument(
+        "--force-rules",
+        action="store_true",
+        help=(
+            "Force RuleBasedAgent for every persona even if adapters are present. "
+            "Use this to reproduce the rule-based baseline without removing adapter files."
+        ),
+    )
+    parser.add_argument(
+        "--require-adapters",
+        action="store_true",
+        help=(
+            "Fail with an error instead of falling back when any persona's adapter is missing. "
+            "Useful for catching configuration mistakes when you intend to run the SLM path."
+        ),
+    )
+
     args = parser.parse_args()
+
+    adapters_dir: Optional[Path]
+    if args.force_rules:
+        # Even when forced to rules, we still pass the path through so logging
+        # can reference it; the resolver will short-circuit to "rules".
+        adapters_dir = Path(args.adapters_dir) if args.adapters_dir else None
+    else:
+        adapters_dir = Path(args.adapters_dir) if args.adapters_dir else None
 
     if args.hero:
         output_path = Path("eval/results/hero_experiment.json")
-        run_hero_experiment(output_path, n_ticks=args.n_ticks)
+        run_hero_experiment(
+            output_path,
+            n_ticks=args.n_ticks,
+            adapters_dir=adapters_dir,
+            base_model=args.base_model,
+            force_rules=args.force_rules,
+            require_adapters=args.require_adapters,
+        )
 
     elif args.precompute:
         output_dir = Path("eval/results/simulations")
-        run_precompute_library(output_dir, n_ticks=args.n_ticks)
+        run_precompute_library(
+            output_dir,
+            n_ticks=args.n_ticks,
+            adapters_dir=adapters_dir,
+            base_model=args.base_model,
+            force_rules=args.force_rules,
+            require_adapters=args.require_adapters,
+        )
 
     elif args.persona_counts:
         try:
@@ -479,7 +719,14 @@ def main() -> None:
             sys.exit(1)
 
         print(f"Running custom simulation: {persona_counts}")
-        agents = create_agents(persona_counts, seed_offset=args.seed)
+        agents, agent_types = create_agents(
+            persona_counts,
+            seed_offset=args.seed,
+            adapters_dir=adapters_dir,
+            base_model=args.base_model,
+            force_rules=args.force_rules,
+            require_adapters=args.require_adapters,
+        )
         log = run_simulation(
             agents,
             n_ticks=args.n_ticks,
@@ -487,12 +734,12 @@ def main() -> None:
             fair_value=100.0,
             seed=args.seed,
         )
+        log["metadata"]["agent_types"] = agent_types
 
         output_path = Path(args.output) if args.output else Path("eval/results/custom_run.json")
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         # Add metadata fields for the app.
-        n_agents = sum(persona_counts.values())
         composition_str = " / ".join(f"{v} {k.capitalize()}" for k, v in persona_counts.items())
         log["name"] = f"{composition_str} — seed {args.seed}"
 
@@ -501,6 +748,7 @@ def main() -> None:
 
         print(f"\nSimulation complete.")
         print(f"  Final price: {log['market_summary']['final_price']:.2f}")
+        print(f"  Agent types: {agent_types}")
         print(f"  Results saved to: {output_path}")
 
 

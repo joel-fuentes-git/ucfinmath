@@ -72,12 +72,70 @@ Each persona adapter is trained independently using:
 - **PEFT LoRA**: rank-8 adapters on the query and value projection matrices
 - **TRL SFTTrainer**: supervised fine-tuning on the chain-of-thought + action format
 
-Training takes approximately 15 minutes per persona on an A100 GPU. Pre-trained adapters
-can be loaded directly if you do not have a GPU (see `training/finetune.py` for instructions).
+Training takes approximately 15 minutes per persona on an A100 GPU.
 
-**Rule-based fallback**: `simulation/agent.py` provides a `RuleBasedAgent` that implements
-each persona's logic without a model. All notebooks and the Streamlit app use rule-based
-agents by default so the project runs on any laptop.
+**Pre-trained adapters (download)**: The three LoRA adapters used in this talk have already
+been fine-tuned and saved to a shared Google Drive folder so you do not need a GPU to run
+inference yourself:
+
+> [LoRA adapters — Google Drive](https://drive.google.com/drive/folders/1hOQKb-YTvjp_77FhwAyrMdN0I6DX85Nu?usp=share_link)
+
+Download the three adapter directories so the project's `adapters/` folder ends up looking
+like this (each persona directory must contain at minimum an `adapter_config.json`):
+
+```
+adapters/
+├── momentum/
+│   ├── adapter_config.json
+│   └── adapter_model.safetensors
+├── value/
+│   ├── adapter_config.json
+│   └── adapter_model.safetensors
+└── noise/
+    ├── adapter_config.json
+    └── adapter_model.safetensors
+```
+
+**That's all the configuration needed.** The simulation orchestrator
+(`simulation/run_simulation.py`) auto-detects this directory and uses the fine-tuned
+`SLMAgent` for any persona whose adapter is present. The detection is **per persona**:
+if you only download the momentum adapter, momentum agents use the SLM and value/noise
+agents use the rule-based fallback.
+
+**Automatic fallback to rule-based agents.** If a persona's adapter directory is missing,
+or if `transformers`/`peft` are not installed, that persona automatically falls back to
+`RuleBasedAgent` (a hand-coded heuristic with no model weights required). This means the
+project always runs end-to-end on any laptop, regardless of whether the adapters have been
+downloaded — you simply get the SLM path when adapters are present and the rule-based
+caricature when they are not. CLI flags to override the defaults:
+
+```bash
+# Default: SLM if adapters present, rules otherwise
+python simulation/run_simulation.py --hero
+
+# Force rules even if adapters are present (reproduce the rule-based baseline)
+python simulation/run_simulation.py --hero --force-rules
+
+# Fail loudly if any persona's adapter is missing (catch configuration mistakes)
+python simulation/run_simulation.py --hero --require-adapters
+
+# Point at a non-default adapters directory
+python simulation/run_simulation.py --hero --adapters-dir /path/to/adapters
+
+# Use a different base model (must match what the adapters were trained against)
+python simulation/run_simulation.py --hero --base-model Qwen/Qwen2.5-1.5B-Instruct
+```
+
+The agent type that was actually used per persona is stamped into each saved JSON's
+`metadata.agent_types` field, so the notebook and Streamlit app can faithfully report
+which model produced any given run.
+
+**Memory note for the SLM path.** Each persona's model + adapter takes ~6 GB of RAM
+(float32, 1.5B parameters). All agents of the same persona share one model instance
+via a process-wide cache, so a 30-agent mixed run loads three models (~18 GB), not 30.
+On a 16 GB laptop the rule-based fallback is the practical default; on a workstation
+or GPU box the SLM path is preferred and is what the talk's main results are intended
+to be reproduced from.
 
 ### Step 3: Market Simulation (`simulation/`)
 
@@ -169,16 +227,87 @@ Three simulation conditions, each with 30 agents, for 500 ticks:
 | Homogeneous Value | 30 value investors | Mean reversion to fair value, low volatility |
 | Mixed Population | 10 momentum + 10 value + 10 noise | Fat tails, volatility clustering |
 
-**Expected result**: Only the mixed population reproduces the two core stylized facts. The
-momentum-only market trends excessively; the value-only market is too stable; only the conflict
-between behavioral types generates the realistic, heteroskedastic price dynamics we observe in
-real markets.
+**Going-in hypothesis**: Only the mixed population would reproduce the two core stylized facts.
+The momentum-only market would trend excessively; the value-only market would be too stable;
+only the conflict between behavioral types would generate the realistic, heteroskedastic price
+dynamics we observe in real markets.
 
-To reproduce:
+### Actual Results (from the current run)
+
+The recorded run is in `eval/results/hero_experiment.json`. Computed log-return statistics
+across the 500-tick series for each condition:
+
+| Condition | Final price | Excess kurtosis | ACF(r²) lag-1 | Total trades |
+|---|---|---|---|---|
+| Homogeneous Momentum | $14,139.52 | **+17.27** | -0.004 | 216,870 buys / 0 sells |
+| Homogeneous Value    | $99.62     | +0.17       | -0.054 | 0 buys / 0 sells |
+| Mixed Population     | $103.36    | **−1.58**   | +0.122 | 46,683 buys / 45,448 sells |
+
+The empirical picture is **more interesting and more nuanced than the going-in hypothesis**:
+
+1. **Homogeneous Momentum became degenerate.** With only trend-followers and no contrarians,
+   the population locked into a runaway upward trajectory: every agent bought every tick, no
+   one ever sold (zero sell volume across all 500 ticks), and price multiplied by ~141×. The
+   17.3 excess kurtosis comes from this pathology, not from healthy fat tails — the return
+   distribution is dominated by a unipolar drift with occasional small downticks from the
+   exogenous Gaussian noise.
+
+2. **Homogeneous Value did nothing at all.** The value rule (`buy < 95% of fair value`,
+   `sell > 105% of fair value`) is never triggered because the noise term never pushes the
+   price outside `[$98.98, $101.06]`. With zero trades, the price series is just the cumulative
+   exogenous noise — kurtosis ≈ 0, no clustering. Value investors are mean-reverting *only when
+   the price actually deviates*; otherwise they are silent.
+
+3. **The Mixed Population produced volatility but not fat tails.** Returns are roughly six
+   times more volatile than the value-only condition (std 0.0069 vs 0.0010), and the lag-1
+   autocorrelation of squared returns is +0.122 — modest but the only condition where it is
+   meaningfully positive. **However, excess kurtosis is *negative* (−1.58).** The mixed market
+   is platykurtic, not leptokurtic. Behavioral diversity in this minimal market is necessary
+   to generate any volatility-clustering signal at all, but it is *not* sufficient to produce
+   the fat tails of real markets.
+
+**What this tells us.** The going-in hypothesis is partially refuted by these specific runs.
+This is itself an honest empirical finding and a good Section IV motivator: a minimal market
+with three rule-based personas reproduces *one* of the two stylized facts (weak volatility
+clustering) but not the other (fat tails). The momentum-only pathology also tells us that the
+absence of contrarian agents is not "trending too much" — it is loss of stationarity entirely.
+Both observations point at the equilibrium-and-stability open problem.
+
+### Did the eval use the actual fine-tuned model?
+
+The agent type used in any saved run is now recorded in
+`metadata.agent_types` inside each `eval/results/*.json` file. Open the file and check
+that field — it will be `"slm"` for personas that used the fine-tuned LoRA adapter or
+`"rules"` for personas that fell back to `RuleBasedAgent`.
+
+For the **currently checked-in `eval/results/hero_experiment.json`**, the answer is
+`{"momentum": "rules", "value": "rules", "noise": "rules"}` — every persona used the
+rule-based fallback. (Earlier versions of `run_simulation.py` did not have an SLM code
+path at all; the `agent_types` metadata field was added when the auto-detection landed.)
+The numerical results in the table above therefore test the rule-based caricatures, not
+the fine-tuned SLM.
+
+To **re-run the hero experiment using the fine-tuned adapters**, download them from the
+Drive link above into the project's `adapters/` folder so the layout matches the diagram
+in Step 2, then:
+
 ```bash
-python simulation/run_simulation.py --hero
+python simulation/run_simulation.py --hero --require-adapters
 jupyter notebook notebooks/03_simulation_and_eval.ipynb
 ```
+
+The `--require-adapters` flag makes the run fail loudly if any persona's adapter is
+missing, which is useful for catching download mistakes. Without it, missing personas
+silently fall back to rules. Either way, the saved `hero_experiment.json` will record
+which agent type was actually used, and the Streamlit hero experiment page reads that
+field and labels the run accordingly.
+
+The persona inspector page in the Streamlit app (powered by
+`eval/results/persona_examples.json`) is a separate artifact: those reasoning traces
+were generated by `claude-sonnet-4-6` via the Anthropic API in
+`data/generate_personas.py --export-examples`, not by the fine-tuned SLM. Of the 30
+reasoning traces in that file, 4 are placeholder strings from API failures during the
+export — re-run the export script with a valid `ANTHROPIC_API_KEY` to populate them.
 
 ---
 
@@ -215,17 +344,23 @@ disagree most sharply)?
 
 ### 3. Equilibrium and Stability
 
-In our minimal market, prices can diverge without bound if momentum traders dominate. Does the
-market have a well-defined stationary distribution? Under what compositions of persona types
-does the price process remain stationary?
-
-Standard agent-based models often find that heterogeneous populations stabilize prices through
-negative feedback (value investors act as arbitrageurs), but the conditions for stability in an
-LLM-agent market are not well understood.
+In our minimal market, prices can diverge without bound if momentum traders dominate.
+The hero experiment makes this concrete: the homogeneous-momentum condition went from
+$100 to $14,139 in 500 ticks with **zero sell volume across the entire run**. There was
+no oscillation, no correction, no price discovery — just monotone exponential drift. This
+is not "trending too much"; it is loss of stationarity entirely. The mixed condition, by
+contrast, stays in a $94–$106 band but only generates *weak* volatility clustering and
+no fat tails. Standard agent-based models often find that heterogeneous populations
+stabilize prices through negative feedback (value investors act as arbitrageurs), but the
+conditions under which an LLM-agent (or rule-based-agent) market produces both
+stationarity *and* the full set of stylized facts remain unclear.
 
 **Research question**: Is there a "phase transition" in persona composition — a threshold fraction
-of value investors below which the market becomes non-stationary? Can we characterize this
-analytically or only empirically?
+of value investors below which the market becomes non-stationary? Inside the stationary regime,
+is there a sub-region of compositions that also produces fat tails, or do fat tails require
+ingredients (e.g. asymmetric information, finite-memory traders, jumpy fundamentals) that this
+minimal market does not have? Can either threshold be characterized analytically or only
+empirically?
 
 ---
 

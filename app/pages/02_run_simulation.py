@@ -139,6 +139,24 @@ with st.sidebar:
         *All data is pre-computed. No live inference runs in this app.*
         """
     )
+    # The agent type used to produce each run is recorded in metadata.agent_types
+    # by simulation/run_simulation.py. Surface it for the currently selected run.
+    selected_meta = simulations[selected_key].get("metadata", {})
+    selected_types = selected_meta.get("agent_types")
+    if selected_types is None:
+        st.caption(
+            "Selected run predates the agent-type metadata field; it was produced by "
+            "`RuleBasedAgent`. Re-precompute with "
+            "`python simulation/run_simulation.py --precompute` after dropping LoRA "
+            "adapters into `adapters/` to switch to the fine-tuned SLM."
+        )
+    else:
+        type_summary = ", ".join(f"{p}={t}" for p, t in selected_types.items())
+        st.caption(
+            "Agent types used for the selected run:\n\n"
+            f"`{type_summary}`\n\n"
+            "(`slm` = fine-tuned LoRA adapter, `rules` = hand-coded heuristic fallback.)"
+        )
 
 # ---------------------------------------------------------------------------
 # Load selected simulation

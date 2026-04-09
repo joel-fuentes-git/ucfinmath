@@ -87,9 +87,15 @@ trader-personas/
 | Notebooks | `jupyter` | Step-by-step reading/walkthrough interface |
 | Demo app | `streamlit` | Interactive visualization and live simulation |
 
-**Constraint**: The simulation and eval must run without a GPU. Fine-tuning requires one but
-should be documented with estimated time on A100 and fallback instructions for loading
-pre-fine-tuned adapters.
+**Constraint**: The simulation and eval must always run end-to-end without a GPU. They do
+this through automatic fallback: `simulation/run_simulation.py:create_agents` uses
+`SLMAgent` (fine-tuned LoRA on `Qwen/Qwen2.5-1.5B-Instruct`) when adapters are present
+under `<project_root>/adapters/<persona>/`, and falls back to `RuleBasedAgent` (a
+hand-coded heuristic with no model weights) for any persona whose adapter directory is
+missing or fails to load. Fine-tuning still requires a GPU and is documented with
+estimated time on A100; the pre-trained adapters used in the talk are linked from the
+README so users can drop them in and get the SLM path without doing the training run
+themselves.
 
 ---
 

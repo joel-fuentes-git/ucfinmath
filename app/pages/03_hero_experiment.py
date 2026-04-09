@@ -51,16 +51,19 @@ CONDITION_COLORS = {
 
 CONDITION_DESCRIPTIONS = {
     "momentum_only": (
-        "30 momentum traders. All agents follow the same trend-chasing logic. "
-        "Expected: persistent trends, herding, possible runaway price drift."
+        "30 momentum traders. All trend-followers, no contrarians. "
+        "Recorded run: degenerate runaway — every agent buys every tick, zero sells, "
+        "price multiplies by ~141×. Non-stationary, not just trendy."
     ),
     "value_only": (
-        "30 value investors. All agents anchor to the same fair value. "
-        "Expected: stable prices, rapid mean-reversion, low volatility."
+        "30 value investors anchored to fair value $100 with a 5% margin of safety. "
+        "Recorded run: zero trades — exogenous noise never pushes price outside the 5% band, "
+        "so the rule never fires. Price is just integrated Gaussian noise."
     ),
     "mixed": (
-        "10 momentum + 10 value + 10 noise traders. "
-        "Expected: fat tails, volatility clustering — the stylized facts of real markets."
+        "10 momentum + 10 value + 10 noise traders. Recorded run: ~6× the volatility of "
+        "the value-only condition and weak but real lag-1 volatility clustering "
+        "(ACF ≈ 0.12). But returns are platykurtic — no fat tails."
     ),
 }
 
@@ -186,7 +189,10 @@ with st.sidebar:
         """
         **The experiment**: three simulated markets, each with 30 agents, run for 500 ticks.
 
-        Only the mixed population reproduces the stylized facts of real markets.
+        **What the recorded run actually shows**: behavioral diversity is *necessary* for both
+        stationarity and any volatility-clustering signal at all, but *not sufficient* to
+        produce fat tails. The two homogeneous conditions fail in opposite ways
+        (momentum-only runs away, value-only never trades).
         """
     )
     st.divider()
@@ -197,6 +203,45 @@ with st.sidebar:
         - Volatility clustering (ACF of squared returns)
         """
     )
+    st.divider()
+    # Surface which agent type each persona used in the loaded run, by reading the
+    # agent_types field that simulation/run_simulation.py stamps into metadata.
+    seen_types: set[str] = set()
+    persona_to_type: dict[str, str] = {}
+    for cond_data in hero_data.values():
+        meta = cond_data.get("metadata", {})
+        types_for_run = meta.get("agent_types", {})
+        for persona, t in types_for_run.items():
+            seen_types.add(t)
+            persona_to_type.setdefault(persona, t)
+
+    if not seen_types:
+        st.caption(
+            "This results file predates the agent-type metadata field. The numbers were "
+            "produced by `RuleBasedAgent`. Re-run "
+            "`python simulation/run_simulation.py --hero` after dropping the LoRA "
+            "adapters into `adapters/` to get the fine-tuned SLM results instead."
+        )
+    elif seen_types == {"slm"}:
+        st.caption(
+            "All conditions in this run were produced by **SLMAgent** "
+            "(the fine-tuned LoRA SLM). "
+            f"Personas: {', '.join(f'{p}={t}' for p, t in persona_to_type.items())}."
+        )
+    elif seen_types == {"rules"}:
+        st.caption(
+            "All conditions in this run were produced by **RuleBasedAgent** "
+            "(hand-coded heuristic, no model weights). "
+            "Drop LoRA adapters into `adapters/` and re-run "
+            "`python simulation/run_simulation.py --hero` to switch to the SLM path."
+        )
+    else:
+        # Mixed — at least one persona used SLM, at least one used rules.
+        st.caption(
+            "Mixed agent types in this run. "
+            f"Per-persona: {', '.join(f'{p}={t}' for p, t in persona_to_type.items())}. "
+            "`slm` = fine-tuned LoRA, `rules` = hand-coded heuristic fallback."
+        )
 
 # ---------------------------------------------------------------------------
 # Main panel: header
@@ -451,8 +496,10 @@ for tab, key in zip(tabs, condition_keys):
 st.divider()
 st.markdown("## Excess Kurtosis Comparison")
 st.markdown(
-    "*The central result: only the mixed population shows fat tails. "
-    "Normal distribution has excess kurtosis = 0.*"
+    "*Normal distribution has excess kurtosis = 0. Positive means leptokurtic (fat tails); "
+    "negative means platykurtic (thin tails). Read the momentum-only bar with care: a high "
+    "kurtosis there can come from a runaway-trend pathology rather than from the symmetric "
+    "fat-tail shape we mean when we talk about real-market stylized facts.*"
 )
 
 kurtosis_values = []
@@ -510,14 +557,55 @@ fig_kurt.update_layout(
 
 st.plotly_chart(fig_kurt, use_container_width=True)
 
-# Interpretation text
+# Interpretation text — describe what the numbers actually show, do not assume the
+# going-in hypothesis was confirmed.
 if len(kurtosis_values) == 3:
-    mixed_ek = kurtosis_values[condition_keys.index("mixed")] if "mixed" in condition_keys else None
+    label_to_ek = dict(zip(condition_labels, kurtosis_values))
+    mixed_ek = next(
+        (ek for k, ek in zip(condition_keys, kurtosis_values) if k == "mixed"),
+        None,
+    )
+    momentum_ek = next(
+        (ek for k, ek in zip(condition_keys, kurtosis_values) if k == "momentum_only"),
+        None,
+    )
+    value_ek = next(
+        (ek for k, ek in zip(condition_keys, kurtosis_values) if k == "value_only"),
+        None,
+    )
+
     if mixed_ek is not None and mixed_ek > 0.5:
         st.success(
             f"The mixed population shows excess kurtosis of **{mixed_ek:.2f}** — "
             "significantly heavier tails than a normal distribution. "
             "This is the fat-tail stylized fact."
+        )
+    elif mixed_ek is not None and mixed_ek < -0.5:
+        st.warning(
+            f"In this recorded run, the mixed population shows excess kurtosis of "
+            f"**{mixed_ek:.2f}** — *platykurtic* (thinner-than-normal tails), not "
+            "leptokurtic. The going-in hypothesis predicted fat tails here. The honest "
+            "reading is that behavioral diversity in this minimal market produces some "
+            "volatility clustering (see the per-condition ACF tab) but not fat tails. "
+            "What additional ingredient is needed — finite-memory traders, jumpy "
+            "fundamentals, the actual fine-tuned SLM in place of the rule-based "
+            "caricature — is exactly the Section IV open question."
+        )
+    elif mixed_ek is not None:
+        st.info(
+            f"The mixed population shows excess kurtosis of **{mixed_ek:.2f}** — "
+            "close to a normal distribution. No clear fat-tail signal in this run."
+        )
+
+    if momentum_ek is not None and momentum_ek > 5.0:
+        st.warning(
+            f"The homogeneous-momentum bar reads **{momentum_ek:.2f}**, which looks like "
+            "extreme fat tails — but in the recorded run this comes from a degeneracy, "
+            "not from healthy leptokurtosis. With only trend-followers and no contrarians, "
+            "every agent buys every tick, no one ever sells, and price multiplies by ~141×. "
+            "The high kurtosis is the signature of a unipolar runaway, not of the "
+            "symmetric heavy-tailed shape real markets have. Treat it as evidence for the "
+            "Section IV equilibrium-and-stability open problem rather than for fat tails."
         )
 
 # ---------------------------------------------------------------------------
@@ -553,16 +641,23 @@ with st.expander("What are stylized facts?", expanded=False):
         squared returns** is significantly positive at short lags. This is the empirical
         basis for GARCH models (Engle 1982; Bollerslev 1986).
 
-        **Why heterogeneous agents reproduce these facts:**
+        **What this experiment actually shows about heterogeneous agents:**
 
-        In a homogeneous market (all momentum or all value traders), the aggregate order flow
-        is predictable — everyone reacts similarly to the same signals. Prices are either
-        smoothly trending (momentum) or stable (value).
+        The going-in expectation is that mixing momentum, value, and noise traders should
+        produce both stylized facts at once: momentum amplifies trends, value pushes back,
+        noise adds bursts, and the interaction generates non-linear dynamics with fat tails
+        and volatility clustering.
 
-        In a mixed market, momentum traders amplify trends until value investors push back.
-        Noise traders add random bursts of volume. The interaction between these forces
-        creates non-linear dynamics: prices occasionally overshoot and correct sharply,
-        generating the fat tails and volatility clustering we observe in real data.
+        The recorded run partially confirms and partially refutes this. The two homogeneous
+        conditions fail in *opposite* ways: with only trend-followers, the price runs away
+        unboundedly (zero sells in 500 ticks); with only value investors, the noise term
+        never breaks the 5% margin of safety, so no one ever trades at all. Behavioral
+        diversity is therefore necessary even for the market to be stationary. The mixed
+        market does produce a small but real lag-1 ACF on squared returns (~0.12 — weak
+        volatility clustering), but its return distribution is platykurtic, not leptokurtic.
+        Volatility clustering yes; fat tails no. Reproducing both stylized facts in this
+        minimal market apparently requires more than three rule-based personas — and that
+        is the precise empirical hook for the Section IV open problems.
 
         *Reference: Cont, R. (2001). Empirical properties of asset returns: stylized facts
         and statistical issues. Quantitative Finance, 1(2), 223-236.*
