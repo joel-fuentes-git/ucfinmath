@@ -78,13 +78,14 @@ st.markdown(
     different ways — should be necessary and sufficient to produce the macro-level stylized facts
     observed in real financial markets (fat tails, volatility clustering).
 
-    **Status of the demo**: every number currently shown on the Hero Experiment and
-    Simulation Explorer pages was produced by the hand-coded `RuleBasedAgent` fallback,
-    **not** by the fine-tuned LoRA SLM. The SLM inference run is pending, so the central
-    hypothesis — that *language-model-driven* behavioral heterogeneity reproduces stylized
-    facts — has not yet been tested. What is shown right now is a rule-based baseline; the
-    fine-tuned-SLM results are the next milestone, and the pages will be re-stamped once
-    those numbers exist.
+    **Status of the demo**: every number shown on the Hero Experiment and
+    Simulation Explorer pages was produced by the fine-tuned LoRA `SLMAgent`
+    (per-persona adapters on top of `Qwen/Qwen2.5-1.5B-Instruct`). The results
+    are surprising in ways the rule-based caricature did not predict: SLM
+    momentum traders run the price *down* rather than up, the value-only
+    market is the one that exhibits measurable volatility clustering, and no
+    condition produces strong fat tails in 500 ticks. The Hero Experiment page
+    walks through what each condition actually shows.
     """
 )
 
@@ -139,10 +140,9 @@ st.markdown(
     2. **Simulation Explorer** — Explore pre-computed simulation runs across
        different persona compositions. See price dynamics, order flow, and P&L.
 
-    3. **Hero Experiment** — Pre-computed results across the three persona compositions.
-       Currently populated by the `RuleBasedAgent` baseline (the SLM inference run is
-       pending), so the page reports what the rule-based caricature produces, not yet
-       what the fine-tuned SLM does.
+    3. **Hero Experiment** — Pre-computed results across the three persona compositions,
+       produced by the fine-tuned LoRA SLM. Reports actual per-condition price dynamics,
+       excess kurtosis, and volatility-clustering diagnostics from the 500-tick runs.
     """
 )
 

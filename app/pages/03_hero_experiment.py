@@ -49,19 +49,22 @@ CONDITION_COLORS = {
 
 CONDITION_DESCRIPTIONS = {
     "momentum_only": (
-        "30 momentum traders. All trend-followers, no contrarians. "
-        "Recorded run: degenerate runaway — every agent buys every tick, zero sells, "
-        "price multiplies by ~141×. Non-stationary, not just trendy."
+        "30 fine-tuned momentum SLM agents. All trend-followers, no contrarians. "
+        "Recorded run: price collapses from $100 to $1.73 — ~9.6× more sell volume than "
+        "buy volume. Once any drawdown appears, every agent reads it as a downtrend and "
+        "sells, so the market locks into a monotone downward spiral. Non-stationary."
     ),
     "value_only": (
-        "30 value investors anchored to fair value $100 with a 5% margin of safety. "
-        "Recorded run: zero trades — exogenous noise never pushes price outside the 5% band, "
-        "so the rule never fires. Price is just integrated Gaussian noise."
+        "30 fine-tuned value SLM agents. Recorded run: actively trades (≈84K total volume), "
+        "price stays in a tight $92–$101 band, and the ACF of squared returns is "
+        "significantly positive at lag 1 (≈0.134). The homogeneous-value market is the "
+        "one condition that exhibits measurable volatility clustering."
     ),
     "mixed": (
-        "10 momentum + 10 value + 10 noise traders. Recorded run: ~6× the volatility of "
-        "the value-only condition and weak but real lag-1 volatility clustering "
-        "(ACF ≈ 0.12). But returns are platykurtic — no fat tails."
+        "10 momentum + 10 value + 10 noise fine-tuned SLM agents. Recorded run: price "
+        "collapses to $3.43 — the momentum cohort dominates the sell side and value "
+        "investors cannot absorb enough flow to stabilize the market. Returns are "
+        "near-normal (ek ≈ 0.06), no fat tails, no clustering."
     ),
 }
 
@@ -187,12 +190,9 @@ with st.sidebar:
         """
         **The experiment**: three simulated markets, each with 30 agents, run for 500 ticks.
 
-        **Caveat**: the currently loaded run was produced by `RuleBasedAgent` (the
-        hand-coded fallback), **not** by the fine-tuned LoRA SLM. The SLM inference run
-        is pending, so the central hypothesis — that *language-model-driven* behavioral
-        heterogeneity reproduces stylized facts — has not yet been tested. Treat the
-        numbers below as a rule-based baseline; they will be re-stamped once the SLM
-        inference results land.
+        The currently loaded run was produced by `SLMAgent` — the fine-tuned LoRA
+        adapters on top of `Qwen/Qwen2.5-1.5B-Instruct`. The numbers below reflect
+        actual SLM inference behavior, not a rule-based baseline.
         """
     )
     st.divider()
@@ -497,9 +497,10 @@ st.divider()
 st.markdown("## Excess Kurtosis Comparison")
 st.markdown(
     "*Normal distribution has excess kurtosis = 0. Positive means leptokurtic (fat tails); "
-    "negative means platykurtic (thin tails). Read the momentum-only bar with care: a high "
-    "kurtosis there can come from a runaway-trend pathology rather than from the symmetric "
-    "fat-tail shape we mean when we talk about real-market stylized facts.*"
+    "negative means platykurtic (thin tails). In the SLM run, none of the three conditions "
+    "reach the strong leptokurtic regime that real-market return series sit in — the "
+    "stylized-fact signal in this run lives in the volatility-clustering diagnostic for the "
+    "value-only condition, not in kurtosis.*"
 )
 
 kurtosis_values = []
@@ -577,37 +578,30 @@ if len(kurtosis_values) == 3:
     if mixed_ek is not None and mixed_ek > 0.5:
         st.success(
             f"The mixed population shows excess kurtosis of **{mixed_ek:.2f}** — "
-            "significantly heavier tails than a normal distribution. "
-            "This is the fat-tail stylized fact."
+            "heavier tails than a normal distribution. This is a fat-tail signal."
         )
     elif mixed_ek is not None and mixed_ek < -0.5:
-        st.warning(
-            f"In this rule-based run, the mixed population shows excess kurtosis of "
-            f"**{mixed_ek:.2f}** — *platykurtic* (thinner-than-normal tails), not "
-            "leptokurtic. The going-in hypothesis predicted fat tails here. **But this "
-            "result is from the `RuleBasedAgent` baseline, not the fine-tuned LoRA SLM** "
-            "— the SLM inference run is still pending, so the experiment hypothesis is "
-            "not yet tested. Whether the fine-tuned SLM's richer reasoning produces fat "
-            "tails where these rule-based caricatures could not is the open question this "
-            "page will answer once the SLM results land."
+        st.info(
+            f"The mixed population shows excess kurtosis of **{mixed_ek:.2f}** — "
+            "*platykurtic* (thinner-than-normal tails). The going-in hypothesis "
+            "predicted fat tails here; in the SLM run the mixed market instead "
+            "collapses monotonically (dominated by momentum-driven selling), which "
+            "concentrates returns around a similar per-tick downmove rather than "
+            "producing the occasional large shocks that generate heavy tails."
         )
     elif mixed_ek is not None:
         st.info(
             f"The mixed population shows excess kurtosis of **{mixed_ek:.2f}** — "
-            "close to a normal distribution. No clear fat-tail signal in this run."
+            "close to a normal distribution. No clear fat-tail signal."
         )
 
     if momentum_ek is not None and momentum_ek > 5.0:
         st.warning(
-            f"The homogeneous-momentum bar reads **{momentum_ek:.2f}**, which looks like "
-            "extreme fat tails — but in this rule-based run it comes from a degeneracy, "
-            "not from healthy leptokurtosis. With only trend-followers and no contrarians, "
-            "every agent buys every tick, no one ever sells, and price multiplies by ~141×. "
-            "The high kurtosis is the signature of a unipolar runaway, not of the symmetric "
-            "heavy-tailed shape real markets have. Treat it as evidence for the "
-            "equilibrium-and-stability open problem rather than for fat tails — and note "
-            "that this is the rule-based baseline, with the fine-tuned-SLM result still "
-            "pending."
+            f"The homogeneous-momentum bar reads **{momentum_ek:.2f}**, extreme kurtosis. "
+            "In the SLM run this typically signals a runaway — but note the direction: "
+            "the fine-tuned momentum agents drive price *down*, not up, once any drawdown "
+            "triggers a coordinated sell. Treat it as evidence for the equilibrium-and-"
+            "stability open problem rather than for real-market fat tails."
         )
 
 # ---------------------------------------------------------------------------
@@ -645,24 +639,67 @@ with st.expander("What are stylized facts?", expanded=False):
 
         **What this experiment actually shows about heterogeneous agents:**
 
-        The going-in expectation is that mixing momentum, value, and noise traders should
+        The going-in expectation was that mixing momentum, value, and noise traders would
         produce both stylized facts at once: momentum amplifies trends, value pushes back,
         noise adds bursts, and the interaction generates non-linear dynamics with fat tails
         and volatility clustering.
 
-        **Status: results pending.** The numbers currently shown on this page are the
-        `RuleBasedAgent` baseline, **not** the fine-tuned LoRA SLM. The SLM inference run
-        is the next milestone, so the actual experiment hypothesis — that
-        *language-model-driven* behavioral heterogeneity is what produces stylized facts —
-        is not yet tested. What the rule-based baseline shows is suggestive but not the
-        answer: the two homogeneous conditions fail in opposite ways (momentum-only runs
-        away unboundedly with zero sells in 500 ticks; value-only never trades because the
-        noise term never breaks the 5% margin of safety), and the mixed rule-based market
-        produces weak volatility clustering (~0.12 lag-1 ACF on squared returns) but a
-        platykurtic return distribution rather than fat tails. Whether the fine-tuned SLM
-        does better — and in particular whether it reproduces both stylized facts where the
-        rule-based caricatures could not — is the open question this page will answer once
-        the SLM inference results are available.
+        **What the SLM run shows.** The fine-tuned adapters do not behave like their
+        rule-based caricatures:
+
+        - **Momentum-only collapsed to $1.73.** The SLM momentum agents converge on
+          sell-the-dip once any drawdown appears — sell volume is roughly 9.6× buy volume
+          across the run. Return kurtosis is near-normal; the pathology is directional,
+          not heavy-tailed.
+        - **Value-only is where clustering shows up.** Price stays in a tight $92–$101
+          band, but squared returns autocorrelate significantly (lag-1 ACF ≈ 0.134 —
+          well above the 95% CI bound for n=500). This is the one condition in this run
+          that exhibits a clean stylized-fact signature.
+        - **Mixed collapsed too.** 10 value agents were not enough ballast against 10
+          momentum SLMs pulling the price down; the market ended at $3.43 with near-normal
+          return kurtosis and no clustering.
+
+        The mixed-population hypothesis is not cleanly supported by this run. The stylized
+        fact that did emerge did so in the *homogeneous-value* condition, which is the
+        opposite of the going-in prediction. The equilibrium-and-stability open problem
+        is now the most pressing: in the SLM regime, a non-trivial fraction of contrarian
+        agents is needed for the price to stay stationary at all, and exactly what
+        fraction is unknown.
+
+        **Constraints and caveats.** Before reading these results as a verdict on the
+        hypothesis, note the limits of the current run:
+
+        - **Single seed per condition** (seed 42). Kurtosis and short-lag ACFs have high
+          finite-sample variance; we cannot yet distinguish "this condition has no fat
+          tails" from "this seed did not produce them." A 30-seed ensemble is the first
+          missing experiment.
+        - **500 ticks is short.** Real-market stylized facts are measured over 10³–10⁵
+          observations. Two of the three conditions also collapse into non-stationarity
+          well before tick 500, so their return series is dominated by the transient
+          rather than by a stationary distribution.
+        - **30 agents is small** and the order-book engine is minimal (one linear price
+          impact coefficient, Gaussian memoryless noise, no bid/ask, no inventory).
+          Several real stylized facts (leverage effect, asymmetric volume) are
+          microstructure-driven and cannot emerge from this engine regardless of agent
+          behavior.
+        - **Context drift is uncontrolled.** The prompt each SLM agent sees at tick 400
+          is different from the one at tick 10 (longer price history, different recent
+          moves). The momentum-only downward spiral is consistent with context drift
+          rather than with a stable adapter policy — see Open Problem #1.
+        - **Persona fidelity is not separately measured.** We have not tested the
+          adapters on held-out scenarios with theoretically-correct actions, so some of
+          what looks like a "momentum failure mode" might be drift from the training-
+          data voice rather than a coherent policy.
+
+        **What to run next** (rough order of diagnostic value): (1) a 30-seed ensemble
+        per condition, (2) 5,000–10,000-tick horizons with stationarity-aware windowing,
+        (3) a held-out persona-fidelity audit, (4) a value-fraction composition sweep to
+        locate the stability phase boundary, (5) context-drift ablations (fixed-window,
+        summarized, zero-history prompts), (6) microstructure extensions (bid/ask,
+        inventory penalty, autocorrelated ε).
+
+        The right reading of the current page is **"preliminary; the hypothesis is not
+        yet adequately tested,"** not "the mixed-population hypothesis is falsified."
 
         *Reference: Cont, R. (2001). Empirical properties of asset returns: stylized facts
         and statistical issues. Quantitative Finance, 1(2), 223-236.*

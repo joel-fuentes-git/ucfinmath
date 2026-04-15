@@ -221,88 +221,210 @@ The momentum-only market would trend excessively; the value-only market would be
 only the conflict between behavioral types would generate the realistic, heteroskedastic price
 dynamics we observe in real markets.
 
-### Current Results (rule-based agents — SLM inference results pending)
+### Current Results (fine-tuned LoRA SLM agents)
 
-> **Important caveat.** Every number in the table below was produced by the
-> hand-coded `RuleBasedAgent` fallback, **not** by the fine-tuned LoRA SLM. The
-> demo currently runs the rule-based caricature end-to-end so it stays
-> reproducible on a laptop. The fine-tuned-SLM run is still pending, so the
-> central hypothesis — that *language-model-driven* behavioral heterogeneity
-> reproduces stylized facts — has **not yet been tested**. Read what follows as
-> a baseline against the rule-based caricature, not as a verdict on the
-> hypothesis itself.
+Every number in the table below was produced by `SLMAgent` — the fine-tuned
+per-persona LoRA adapters on top of `Qwen/Qwen2.5-1.5B-Instruct`. The recorded
+run is in `eval/results/hero_experiment.json` (all three conditions stamp
+`metadata.agent_types` = `{..., "slm"}`). Log-return statistics across the
+500-tick series:
 
-The recorded rule-based run is in `eval/results/hero_experiment.json`. Computed log-return
-statistics across the 500-tick series for each condition:
-
-| Condition | Final price | Excess kurtosis | ACF(r²) lag-1 | Total trades |
+| Condition | Final price | Excess kurtosis | ACF(r²) lag-1 | Total volume (buy / sell) |
 |---|---|---|---|---|
-| Homogeneous Momentum | $14,139.52 | **+17.27** | -0.004 | 216,870 buys / 0 sells |
-| Homogeneous Value    | $99.62     | +0.17       | -0.054 | 0 buys / 0 sells |
-| Mixed Population     | $103.36    | **−1.58**   | +0.122 | 46,683 buys / 45,448 sells |
+| Homogeneous Momentum | $1.73   | +0.14  | −0.028 | 17,277 / 165,294 |
+| Homogeneous Value    | $93.48  | −0.33  | **+0.134** | 40,494 / 43,083 |
+| Mixed Population     | $3.43   | +0.06  | +0.028 | 29,202 / 149,172 |
 
-What the rule-based baseline shows:
+What the SLM run actually shows — and why it is not what the rule-based
+caricatures predicted:
 
-1. **Homogeneous Momentum became degenerate.** With only trend-followers and no contrarians,
-   the population locked into a runaway upward trajectory: every agent bought every tick, no
-   one ever sold (zero sell volume across all 500 ticks), and price multiplied by ~141×. The
-   17.3 excess kurtosis comes from this pathology, not from healthy fat tails — the return
-   distribution is dominated by a unipolar drift with occasional small downticks from the
-   exogenous Gaussian noise.
+1. **Homogeneous Momentum collapsed downward, not upward.** The rule-based
+   momentum agent buys every uptick unconditionally; the fine-tuned SLM
+   momentum persona, in contrast, reads any drawdown as a downtrend signal and
+   sells into it. Sell volume was ~9.6× buy volume across 500 ticks and the
+   price fell from $100 to $1.73. The failure mode is directional, not
+   heavy-tailed: excess kurtosis is ≈ 0.14 (effectively Gaussian) with positive
+   skew from the monotone decline. The stability pathology is real, but its
+   sign is the opposite of what one-line momentum rules produce.
 
-2. **Homogeneous Value did nothing at all.** The value rule (`buy < 95% of fair value`,
-   `sell > 105% of fair value`) is never triggered because the noise term never pushes the
-   price outside `[$98.98, $101.06]`. With zero trades, the price series is just the cumulative
-   exogenous noise — kurtosis ≈ 0, no clustering. Value investors are mean-reverting *only when
-   the price actually deviates*; otherwise they are silent.
+2. **Homogeneous Value is where the volatility-clustering signal lives.**
+   Unlike the rule-based value agent (which was silent because prices never
+   breached a 5% margin-of-safety band), the fine-tuned SLM value persona
+   trades actively — ~84K total volume over 500 ticks. Price stayed in a tight
+   $92–$101 corridor, and the ACF of squared returns at lag 1 is **+0.134**,
+   well above the ±0.088 95% CI bound for n=500. This is the one condition in
+   this run that cleanly exhibits a canonical stylized fact.
 
-3. **The Mixed Population produced volatility but not fat tails.** Returns are roughly six
-   times more volatile than the value-only condition (std 0.0069 vs 0.0010), and the lag-1
-   autocorrelation of squared returns is +0.122 — modest but the only condition where it is
-   meaningfully positive. **However, excess kurtosis is *negative* (−1.58).** The mixed market
-   is platykurtic, not leptokurtic. Behavioral diversity *with three rule-based caricatures*
-   in this minimal market is necessary to generate any volatility-clustering signal at all,
-   but does not produce the fat tails of real markets.
+3. **Mixed Population also collapsed.** 10 value SLM agents were not enough
+   ballast against 10 momentum SLM agents on the sell side; the mixed market
+   ended at $3.43 with sell volume ~5× buy volume. Returns are near-normal
+   (ek ≈ 0.06) and the lag-1 ACF of squared returns is only +0.028. The
+   mixed-population hypothesis — that heterogeneity is what produces the
+   stylized facts — is **not** supported here, and the condition that did
+   produce clustering was homogeneous.
 
-**What this tells us — and what it does not.** Against the rule-based baseline, the going-in
-hypothesis is only partially supported: a minimal market with three rule-based personas
-reproduces one of the two stylized facts (weak volatility clustering) but not the other (fat
-tails). The momentum-only pathology also tells us that the absence of contrarian agents is
-not "trending too much" — it is loss of stationarity entirely. **None of this yet speaks to
-the actual hypothesis under test**, which is whether *fine-tuned LoRA SLM* personas — with
-their richer, more context-sensitive reasoning — produce qualitatively different macro
-dynamics than these rule-based caricatures. That experiment is pending; the SLM inference
-run is the next milestone, and the hero experiment table will be re-stamped (and this
-section rewritten) once those numbers exist.
+**What this tells us.** The fine-tuned SLM agents behave qualitatively
+differently from the rule-based caricatures, and the places where stylized
+facts appear are not where the going-in hypothesis predicted. The headline
+results against the SLM baseline:
+
+- *Fat tails:* no condition exhibits meaningful leptokurtosis in 500 ticks.
+- *Volatility clustering:* present (and only present) in the homogeneous-value
+  condition, driven by the internal dynamics of the value persona's active
+  trading rather than by inter-persona disagreement.
+- *Equilibrium and stability:* both the momentum-only and the mixed-population
+  conditions lose stationarity under the SLM agents. The fraction of value
+  agents required to stabilize a market with SLM momentum traders in it is
+  almost certainly higher than 1/3, and the exact phase boundary is unknown.
+
+This is the empirical starting point that the rest of the project — and the
+open-problems section below — builds from.
+
+### Constraints and limitations
+
+Several design choices in this run bound how strongly any conclusion can be
+drawn, and listing them explicitly is important because each one suggests a
+different next experiment:
+
+- **Single seed, single run per condition.** Every number above comes from one
+  500-tick trajectory per condition (seed 42 for the hero experiment, seed 123
+  for momentum-heavy). Stylized-fact statistics — especially kurtosis and the
+  lag-1 ACF of squared returns — have high finite-sample variance, so a single
+  run cannot distinguish "this condition has no fat tails" from "this seed did
+  not produce fat tails." A proper test needs ensembles (≥20–50 independent
+  seeds per condition) and confidence intervals on the statistics themselves,
+  not just on the underlying returns.
+
+- **Short horizon.** 500 ticks is roughly two trading years if one tick is a
+  day, or a couple of days if one tick is a minute. Real-market stylized facts
+  are typically measured over 10³–10⁵ observations; 499 log returns is at the
+  very low end of where Jarque-Bera and Ljung-Box have power. The homogeneous-
+  momentum and mixed runs also end in non-stationary collapse well before the
+  500th tick, so most of their return series is dominated by the transient
+  path to $1–$3 rather than by a stationary distribution. Ensembles *and*
+  longer horizons — or post-collapse truncation — are both needed.
+
+- **Small population.** 30 agents is small enough that individual-agent
+  idiosyncrasy dominates. Neither the 10-agent sub-cohorts in the mixed
+  condition nor the 30-agent homogeneous cohorts are large enough to talk
+  about limits in the usual agent-based-modelling sense (N → ∞ with fixed
+  persona fractions). Scaling N while holding fractions fixed would separate
+  finite-size effects from genuine macro behavior.
+
+- **Minimal market microstructure.** The price impact rule
+  `p_{t+1} = p_t · (1 + α · imbalance + ε)` with α = 0.01 collapses the order
+  book into a single linear-impact coefficient, has no inventory constraints,
+  no funding, no short-selling rules, no transaction costs, and no bid/ask.
+  Several real-market stylized facts (leverage effect, asymmetric volume
+  response) are microstructure-driven and simply cannot emerge from this
+  engine, regardless of agent behavior.
+
+- **Exogenous noise is thin.** ε ∼ N(0, 0.001) per tick is Gaussian and
+  memoryless. Fat tails and clustering in real markets are partly driven by
+  fat-tailed, autocorrelated exogenous shocks (news arrivals, macro releases).
+  With a Gaussian noise floor, the only route to fat tails is through
+  endogenous agent dynamics, and the minimal engine limits how much of that
+  can happen.
+
+- **Context drift in the SLM prompt.** Each tick, the SLM agent receives a
+  prompt that includes recent price history. Over 500 ticks, that context
+  grows and shifts, which means a "momentum trader" at tick 400 is not being
+  prompted identically to one at tick 10. The monotone sell-down in the
+  momentum-only condition is consistent with context-drift: once a downtrend
+  is in the window, every forward prompt reinforces it. Open Problem #1
+  (below) flags this explicitly, but for the current run it is a confound,
+  not a controlled variable.
+
+- **Persona fidelity is not measured.** We have no independent test that the
+  LoRA adapters actually implement their nominal theories — no holdout
+  evaluation of (e.g.) "did the value adapter buy dips and sell
+  overextensions in a held-out scenario set?" The adapters were trained on
+  Claude-generated reasoning traces, so their "value" behavior is only as
+  coherent as those traces were. Some of the anomalies above (momentum
+  persona selling into weakness, rather than buying strength) may reflect
+  persona drift from the training-data voice rather than a stable
+  theory-consistent policy.
+
+Taken together, these limits mean that the right reading of the current
+results is **"preliminary; the hypothesis is not yet adequately tested,"**
+rather than "the mixed-population hypothesis is falsified." The one result
+that is comparatively robust is the qualitative stability picture — SLM
+momentum populations are self-destabilizing in this engine, and a 1/3 value
+cohort is not enough to stop it. The kurtosis and clustering results should
+be treated as single-seed signals worth replicating, not as estimates.
+
+### Next steps
+
+Roughly ordered from cheapest / most diagnostic to most ambitious:
+
+1. **Seed ensemble.** Re-run each of the three conditions for 30+ independent
+   seeds and report the full distribution of (final price, excess kurtosis,
+   lag-1 ACF of squared returns, lag-5 mean ACF). This is the single highest-
+   value follow-up; every bullet above depends on knowing the within-condition
+   variance before making any claim about between-condition differences.
+
+2. **Longer horizons + stationarity-aware analysis.** Extend to 5,000–10,000
+   ticks and compute stylized-fact statistics on the longest stationary window
+   inside each run (detected via a rolling Augmented Dickey-Fuller or a simple
+   drawdown cutoff). This separates "the SLM market has no fat tails" from
+   "the SLM market crashed before a stationary distribution had time to form."
+
+3. **Persona-fidelity audit.** Before running more dynamics, score each
+   adapter on a held-out set of market scenarios with known theoretically-
+   correct actions (e.g., "price is 20% below fair value, flat trend" should
+   be a clean value-buy). This tells us whether the momentum persona is
+   actually implementing momentum, or whether the training traces produced a
+   subtly different policy that only looks like momentum on the training
+   distribution.
+
+4. **Composition sweep for the phase boundary.** Fix the total N = 30 and
+   sweep the value fraction from 0 to 1 in steps of 0.1 (holding momentum and
+   noise fractions equal over the remainder). Plot "fraction of runs that
+   remain in a ±20% band after 500 ticks" vs. value fraction. This is a
+   direct test of Open Problem #3 and gives a concrete number for "how many
+   contrarians stabilize a market of SLM momentum traders."
+
+5. **Context-drift ablations.** Re-run the hero experiment with (a) a
+   fixed-length sliding context window, (b) a summarized-history context
+   (last-K statistics rather than raw prices), and (c) a zero-history
+   context (prompt only contains the current tick). If the momentum-only
+   collapse persists in (c), the pathology is in the adapter; if it
+   disappears, it is context-drift and belongs to Open Problem #1.
+
+6. **Microstructure extensions.** Add a simple bid/ask spread, an inventory
+   penalty, or an autocorrelated / fat-tailed ε. Each of these is a
+   defensible candidate for "the missing ingredient" that lets fat tails
+   emerge; running them individually isolates which additions matter.
+
+7. **Scale-up.** Once (1)-(3) are in place, push N to 100–300. If the
+   stylized-fact statistics do not stabilize by N = 300, that is itself a
+   strong result (the finite-N dynamics are the whole story).
+
+Items 1–3 are laptop-runnable with the current rule-based fallback for sanity
+checks and require a GPU or long CPU time for the SLM path. Items 4–7 benefit
+substantially from a GPU.
 
 ### Did the eval use the actual fine-tuned model?
 
-The agent type used in any saved run is now recorded in
-`metadata.agent_types` inside each `eval/results/*.json` file. Open the file and check
-that field — it will be `"slm"` for personas that used the fine-tuned LoRA adapter or
-`"rules"` for personas that fell back to `RuleBasedAgent`.
+Yes. The agent type used in any saved run is recorded in
+`metadata.agent_types` inside each `eval/results/*.json` file. For the
+currently checked-in `eval/results/hero_experiment.json`, all three conditions
+have `agent_types` values that include `"slm"` (the fine-tuned LoRA adapter);
+none fell back to the rule-based path. The same is true of the five
+simulations under `eval/results/simulations/` — they are all SLM runs.
 
-For the **currently checked-in `eval/results/hero_experiment.json`**, the answer is
-`{"momentum": "rules", "value": "rules", "noise": "rules"}` — every persona used the
-rule-based fallback. (Earlier versions of `run_simulation.py` did not have an SLM code
-path at all; the `agent_types` metadata field was added when the auto-detection landed.)
-The numerical results in the table above therefore test the rule-based caricatures, not
-the fine-tuned SLM.
-
-To **re-run the hero experiment using the fine-tuned adapters**, download them from the
-Drive link above into the project's `adapters/` folder so the layout matches the diagram
-in Step 2, then:
+To **re-run the hero experiment locally** (e.g. with a different seed or tick
+count), download the adapters from the Drive link above into the project's
+`adapters/` folder and then:
 
 ```bash
 python simulation/run_simulation.py --hero --require-adapters
 jupyter notebook notebooks/03_simulation_and_eval.ipynb
 ```
 
-The `--require-adapters` flag makes the run fail loudly if any persona's adapter is
-missing, which is useful for catching download mistakes. Without it, missing personas
-silently fall back to rules. Either way, the saved `hero_experiment.json` will record
-which agent type was actually used, and the Streamlit hero experiment page reads that
-field and labels the run accordingly.
+The `--require-adapters` flag makes the run fail loudly if any persona's
+adapter is missing, which is useful for catching download mistakes. The saved
+`hero_experiment.json` records which agent type was actually used per persona.
 
 The persona inspector page in the Streamlit app (powered by
 `eval/results/persona_examples.json`) is a separate artifact: those reasoning traces
@@ -346,16 +468,21 @@ disagree most sharply)?
 
 ### 3. Equilibrium and Stability
 
-In our minimal market, prices can diverge without bound if momentum traders dominate.
-The hero experiment makes this concrete: the homogeneous-momentum condition went from
-$100 to $14,139 in 500 ticks with **zero sell volume across the entire run**. There was
-no oscillation, no correction, no price discovery — just monotone exponential drift. This
-is not "trending too much"; it is loss of stationarity entirely. The mixed condition, by
-contrast, stays in a $94–$106 band but only generates *weak* volatility clustering and
-no fat tails. Standard agent-based models often find that heterogeneous populations
-stabilize prices through negative feedback (value investors act as arbitrageurs), but the
-conditions under which an LLM-agent (or rule-based-agent) market produces both
-stationarity *and* the full set of stylized facts remain unclear.
+In our minimal market, prices diverge without bound whenever SLM momentum
+traders dominate. The hero experiment makes this concrete: the
+homogeneous-momentum condition went from $100 to $1.73 in 500 ticks with sell
+volume ~9.6× buy volume — the fine-tuned momentum persona, given any drawdown,
+converges on a coordinated sell. Even the mixed condition (10 momentum + 10
+value + 10 noise) collapses to $3.43; 1/3 value traders is not enough
+negative feedback. Only the homogeneous-value condition stays stationary, and
+that is the one condition where volatility clustering emerges (lag-1 ACF of
+squared returns ≈ 0.134). Standard agent-based models often find that
+heterogeneous populations stabilize prices through negative feedback (value
+investors act as arbitrageurs), but the SLM run suggests the fraction of
+arbitrageurs required to stabilize a market against fine-tuned momentum
+traders is substantially higher than 1/3, and the conditions under which an
+LLM-agent market produces both stationarity *and* the full set of stylized
+facts remain unclear.
 
 **Research question**: Is there a "phase transition" in persona composition — a threshold fraction
 of value investors below which the market becomes non-stationary? Inside the stationary regime,

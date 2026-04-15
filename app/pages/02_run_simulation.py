@@ -143,10 +143,9 @@ with st.sidebar:
     selected_types = selected_meta.get("agent_types")
     if selected_types is None:
         st.caption(
-            "Selected run predates the agent-type metadata field; it was produced by "
-            "`RuleBasedAgent`. Re-precompute with "
-            "`python simulation/run_simulation.py --precompute` after dropping LoRA "
-            "adapters into `adapters/` to switch to the fine-tuned SLM."
+            "Selected run predates the agent-type metadata field. The current "
+            "pre-computed library is produced by the fine-tuned `SLMAgent`; "
+            "re-run `python simulation/run_simulation.py --precompute` to refresh."
         )
     else:
         type_summary = ", ".join(f"{p}={t}" for p, t in selected_types.items())
